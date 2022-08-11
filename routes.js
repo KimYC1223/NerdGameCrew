@@ -3,10 +3,10 @@ module.exports = function (app) {
     app.engine('html', require('ejs').renderFile);
 
     app.get('/', (req,res) => {
-      res.render(__dirname+'/Web/index.html')
+      res.render(__dirname+'/Web/Main/HTML/index.html')
     })
 
     app.get('/Valheim', (req,res) => {
-      res.render(__dirname+'/Web/Valheim/index.html')
+      res.render(__dirname+'/Web/Valheim/HTML/index.html')
     })
 }
