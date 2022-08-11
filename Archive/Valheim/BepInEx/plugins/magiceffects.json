@@ -1,0 +1,880 @@
+{
+  "MagicItemEffects" : [
+    {
+      "Type" : "DvergerCirclet",
+      "DisplayText" : "영구적인 광원",
+      "CanBeAugmented": false, 
+      "Requirements" : {
+        "NoRoll": true
+      },
+      "SelectionWeight" : 1,
+      "Comment" : "Can't be rolled. Just added to make a Magic Item version of this item."
+    },
+    {
+      "Type" : "Megingjord",
+      "DisplayText" : "최대 무게 +150",
+      "CanBeAugmented": false, 
+      "Requirements" : {
+        "NoRoll": true
+      },
+      "SelectionWeight" : 1,
+      "Comment" : "Can't be rolled. Just added to make a Magic Item version of this item."
+    },
+    {
+      "Type" : "Wishbone",
+      "DisplayText" : "숨겨진 비밀을 밝혀낸다.",
+      "CanBeAugmented": false, 
+      "Requirements" : {
+        "NoRoll": true
+      },
+      "SelectionWeight" : 1,
+      "Comment" : "Can't be rolled. Just added to make a Magic Item version of this item."
+    },
+    {
+      "Type" : "ModifyDamage",
+      "DisplayText" : "모든 유형의 데미지 +{0:0.#}%",
+      "CanBeAugmented": false, 
+      "Requirements" : {
+        "NoRoll": true
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Rare" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Epic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 25, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Comment" : "Can't be rolled. Too powerful?"
+    },
+    {
+      "Type" : "ModifyPhysicalDamage",
+      "DisplayText" : "물리 데미지 +{0:0.#}%",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "AddBluntDamage",
+          "AddSlashingDamage",
+          "AddPiercingDamage"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch"
+        ],
+        "ItemHasPhysicalDamage" : true
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Rare" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Epic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 25, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Strong", "Powerful", "Mighty", "Heavy", "Forceful", "Wicked", "Fighter's", "Warrior" ],
+      "Suffixes": [ "Strength", "Power", "Might", "Force", "the Warrior" ]
+    },
+    {
+      "Type" : "ModifyElementalDamage",
+      "DisplayText" : "원소 데미지 +{0:0.#}%",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "AddFireDamage",
+          "AddFrostDamage",
+          "AddLightningDamage"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch"
+        ],
+        "ItemHasElementalDamage" : true
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Rare" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Epic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 25, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Energized", "Empowered", "Charged", "Intensified" ],
+      "Suffixes": [ "Energy", "Intensity", "Brilliance" ]
+    },
+    {
+      "Type" : "ModifyDurability",
+      "DisplayText" : "최대 내구도 +{0:0.#}%",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "Indestructible"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch",
+          "Shield",
+          "Tool",
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder"
+        ],
+        "AllowedRarities" : [
+          "Magic",
+          "Rare",
+          "Epic"
+        ],
+        "ItemUsesDurability" : true
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 50, "MaxValue" : 100, "Increment" : 5 },
+        "Rare" : { "MinValue" : 50, "MaxValue" : 100, "Increment" : 5 },
+        "Epic" : { "MinValue" : 50, "MaxValue" : 100, "Increment" : 5 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Sturdy", "Stout", "Robust" ],
+      "Suffixes": [ "Sturdiness", "Robustness", "Stability", "the Ox" ]
+    },
+    {
+      "Type" : "ReduceWeight",
+      "DisplayText" : "무게 감소 -{0:0.#}% ",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "Weightless"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch",
+          "Shield",
+          "Tool",
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder"
+        ],
+        "AllowedRarities" : [
+          "Magic",
+          "Rare",
+          "Epic"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 70, "MaxValue" : 90, "Increment" : 5 },
+        "Rare" : { "MinValue" : 70, "MaxValue" : 90, "Increment" : 5 },
+        "Epic" : { "MinValue" : 70, "MaxValue" : 90, "Increment" : 5 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Light", "Slender" ],
+      "Suffixes": [ "the Feather" ]
+    },
+    {
+      "Type" : "RemoveSpeedPenalty",
+      "DisplayText" : "이동속도 패널티 제거",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "ModifyMovementSpeed"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch",
+          "Shield",
+          "Tool",
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder"
+        ],
+        "ItemHasNegativeMovementSpeedModifier" : true
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Agile", "Easy", "Graceful" ],
+      "Suffixes": [ "Agility", "Grace" ]
+    },
+    {
+      "Type" : "ModifyBlockPower",
+      "DisplayText" : "방어 위력 +{0:0.#}%",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Shield"
+        ],
+        "ItemHasBlockPower" : true
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Rare" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Epic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 25, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Stopping", "Defender's" ],
+      "Suffixes": [ "Stopping", "the Defender" ]
+    },
+    {
+      "Type" : "ModifyParry",
+      "DisplayText" : "반격 위력 +{0:0.#}%",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Shield",
+          "TwoHandedWeapon"
+        ],
+        "ItemHasParryPower" : true
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Rare" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Epic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 25, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Elusive", "Rebuking", "Duelist's" ],
+      "Suffixes": [ "Repelling", "the Duelist" ]
+    },
+    {
+      "Type" : "ModifyArmor",
+      "DisplayText" : "방어력 +{0:0.#}%",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder",
+          "Utility"
+        ],
+        "ItemHasArmor" : true
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Rare" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Epic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 25, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Heavy", "Protected" ],
+      "Suffixes": [ "Protection" ]
+    },
+    {
+      "Type" : "ModifyBackstab",
+      "DisplayText" : "암살 데미지 +{0:0.#}%",
+      "Requirements" : {
+        "AllowedSkillTypes" : [
+          "Knives",
+          "Bows"
+        ],
+        "ItemHasBackstabBonus" : true
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Rare" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Epic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 25, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Assassin's", "Stealthy" ],
+      "Suffixes": [ "the Assassin", "Stealth" ]
+    },
+    {
+      "Type" : "IncreaseHealth",
+      "DisplayText" : "최대 체력 +{0:0}",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder",
+          "Utility",
+          "Shield"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 10, "MaxValue" : 25, "Increment" : 5 },
+        "Rare" : { "MinValue" : 15, "MaxValue" : 30, "Increment" : 5 },
+        "Epic" : { "MinValue" : 20, "MaxValue" : 35, "Increment" : 5 },
+        "Legendary" : { "MinValue" : 25, "MaxValue" : 50, "Increment" : 5 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Healthy" ],
+      "Suffixes": [ "Health" ]
+    },
+    {
+      "Type" : "IncreaseStamina",
+      "DisplayText" : "최대 스태미나 +{0:0}",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder",
+          "Utility",
+          "Tool"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 10, "MaxValue" : 25, "Increment" : 5 },
+        "Rare" : { "MinValue" : 15, "MaxValue" : 30, "Increment" : 5 },
+        "Epic" : { "MinValue" : 20, "MaxValue" : 35, "Increment" : 5 },
+        "Legendary" : { "MinValue" : 25, "MaxValue" : 50, "Increment" : 5 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Enduring" ],
+      "Suffixes": [ "Endurance" ]
+    },
+    {
+      "Type" : "ModifyHealthRegen",
+      "DisplayText" : "체력 재생 +{0:0.#}%",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder",
+          "Utility"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Rare" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Epic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 25, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Vigorous" ],
+      "Suffixes": [ "Vigor" ]
+    },
+    {
+      "Type" : "ModifyStaminaRegen",
+      "DisplayText" : "스태미나 재생 +{0:0.#}%",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder",
+          "Utility",
+          "Tool"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Rare" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Epic" : { "MinValue" : 10, "MaxValue" : 20, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 25, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Recovering" ],
+      "Suffixes": [ "Recovery" ]
+    },
+    {
+      "Type" : "AddBluntDamage",
+      "DisplayText" : "타격 데미지 +{0:0.#}",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "AddBluntDamage",
+          "AddSlashingDamage",
+          "AddPiercingDamage",
+          "AddFireDamage",
+          "AddFrostDamage",
+          "AddLightningDamage",
+          "AddPoisonDamage",
+          "AddSpiritDamage"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 1, "MaxValue" : 4, "Increment" : 1 },
+        "Rare" : { "MinValue" : 3, "MaxValue" : 8, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 15, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 20, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Brute" ],
+      "Suffixes": [ "Bludgeoning" ]
+    },
+    {
+      "Type" : "AddSlashingDamage",
+      "DisplayText" : "베기 데미지 +{0:0.#}",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "AddBluntDamage",
+          "AddSlashingDamage",
+          "AddPiercingDamage",
+          "AddFireDamage",
+          "AddFrostDamage",
+          "AddLightningDamage",
+          "AddPoisonDamage",
+          "AddSpiritDamage"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 1, "MaxValue" : 4, "Increment" : 1 },
+        "Rare" : { "MinValue" : 3, "MaxValue" : 8, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 15, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 20, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Sharp", "Keen" ],
+      "Suffixes": [ "Slashing", "Cutting" ]
+    },
+    {
+      "Type" : "AddPiercingDamage",
+      "DisplayText" : "관통 데미지 +{0:0.#}",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "AddBluntDamage",
+          "AddSlashingDamage",
+          "AddPiercingDamage",
+          "AddFireDamage",
+          "AddFrostDamage",
+          "AddLightningDamage",
+          "AddPoisonDamage",
+          "AddSpiritDamage"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 1, "MaxValue" : 4, "Increment" : 1 },
+        "Rare" : { "MinValue" : 3, "MaxValue" : 8, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 15, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 20, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Spiked", "Barbed" ],
+      "Suffixes": [ "Piercing" ]
+    },
+    {
+      "Type" : "AddFireDamage",
+      "DisplayText" : "불 데미지 +{0:0.#}",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "AddBluntDamage",
+          "AddSlashingDamage",
+          "AddPiercingDamage",
+          "AddFireDamage",
+          "AddFrostDamage",
+          "AddLightningDamage",
+          "AddPoisonDamage",
+          "AddSpiritDamage"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 1, "MaxValue" : 4, "Increment" : 1 },
+        "Rare" : { "MinValue" : 3, "MaxValue" : 8, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 15, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 20, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Blazing" ],
+      "Suffixes": [ "Fire" ]
+    },
+    {
+      "Type" : "AddFrostDamage",
+      "DisplayText" : "냉기 데미지 +{0:0.#}",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "AddBluntDamage",
+          "AddSlashingDamage",
+          "AddPiercingDamage",
+          "AddFireDamage",
+          "AddFrostDamage",
+          "AddLightningDamage",
+          "AddPoisonDamage",
+          "AddSpiritDamage"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 1, "MaxValue" : 4, "Increment" : 1 },
+        "Rare" : { "MinValue" : 3, "MaxValue" : 8, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 15, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 20, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Frigid" ],
+      "Suffixes": [ "Frost" ]
+    },
+    {
+      "Type" : "AddLightningDamage",
+      "DisplayText" : "번개 데미지 +{0:0.#}",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "AddBluntDamage",
+          "AddSlashingDamage",
+          "AddPiercingDamage",
+          "AddFireDamage",
+          "AddFrostDamage",
+          "AddLightningDamage",
+          "AddPoisonDamage",
+          "AddSpiritDamage"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 1, "MaxValue" : 4, "Increment" : 1 },
+        "Rare" : { "MinValue" : 3, "MaxValue" : 8, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 15, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 20, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Shocking" ],
+      "Suffixes": [ "Lightning" ]
+    },
+    {
+      "Type" : "AddPoisonDamage",
+      "DisplayText" : "독 데미지 {0:0}초",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "AddBluntDamage",
+          "AddSlashingDamage",
+          "AddPiercingDamage",
+          "AddFireDamage",
+          "AddFrostDamage",
+          "AddLightningDamage",
+          "AddPoisonDamage",
+          "AddSpiritDamage"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 2, "MaxValue" : 4, "Increment" : 1 },
+        "Rare" : { "MinValue" : 4, "MaxValue" : 8, "Increment" : 1 },
+        "Epic" : { "MinValue" : 8, "MaxValue" : 15, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 20, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Infected" ],
+      "Suffixes": [ "Poison" ]
+    },
+    {
+      "Type" : "AddSpiritDamage",
+      "DisplayText" : "영혼 데미지 +{0:0.#}",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "AddBluntDamage",
+          "AddSlashingDamage",
+          "AddPiercingDamage",
+          "AddFireDamage",
+          "AddFrostDamage",
+          "AddLightningDamage",
+          "AddPoisonDamage",
+          "AddSpiritDamage"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 1, "MaxValue" : 4, "Increment" : 1 },
+        "Rare" : { "MinValue" : 3, "MaxValue" : 8, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 15, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 15, "MaxValue" : 20, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Spirit" ],
+      "Suffixes": [ "the Spirits" ]
+    },
+    {
+      "Type" : "AddFireResistance",
+      "DisplayText" : "화염데미지 저항",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder",
+          "Utility",
+          "Shield"
+        ]
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Extinguishing" ],
+      "Suffixes": [ "Fire Resistance" ]
+    },
+    {
+      "Type" : "AddFrostResistance",
+      "DisplayText" : "냉기데미지 저항",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder",
+          "Utility",
+          "Shield"
+        ]
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Insulated" ],
+      "Suffixes": [ "Frost Resistance" ]
+    },
+    {
+      "Type" : "AddLightningResistance",
+      "DisplayText" : "번개데미지 저항",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder",
+          "Utility",
+          "Shield"
+        ]
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Grounded" ],
+      "Suffixes": [ "Lightning Resistance" ]
+    },
+    {
+      "Type" : "AddPoisonResistance",
+      "DisplayText" : "독데미지 저항",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder",
+          "Utility",
+          "Shield"
+        ]
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Curing" ],
+      "Suffixes": [ "Poison Resistance" ]
+    },
+    {
+      "Type" : "AddSpiritResistance",
+      "DisplayText" : "영혼데미지 저항",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder",
+          "Utility",
+          "Shield"
+        ]
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Serene" ],
+      "Suffixes": [ "Spirit Resistance" ]
+    },
+    {
+      "Type" : "ModifyMovementSpeed",
+      "DisplayText" : "이동 속도 +{0:0.#}%",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "RemoveSpeedPenalty"
+        ],
+        "AllowedItemTypes" : [
+          "Legs",
+          "Utility"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 5, "MaxValue" : 10, "Increment" : 1 },
+        "Rare" : { "MinValue" : 6, "MaxValue" : 11, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 8, "MaxValue" : 13, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Quick" ],
+      "Suffixes": [ "Speed" ]
+    },
+    {
+      "Type" : "ModifySprintStaminaUse",
+      "DisplayText" : "달리기 스태미나 소모량 -{0:0.#}%",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Legs",
+          "Utility"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 5, "MaxValue" : 10, "Increment" : 1 },
+        "Rare" : { "MinValue" : 8, "MaxValue" : 13, "Increment" : 1 },
+        "Epic" : { "MinValue" : 11, "MaxValue" : 16, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 14, "MaxValue" : 19, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Sprinter's" ],
+      "Suffixes": [ "Sprinting" ]
+    },
+    {
+      "Type" : "ModifyJumpStaminaUse",
+      "DisplayText" : "점프 스태미나 소모량 -{0:0.#}%",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Legs",
+          "Utility"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 5, "MaxValue" : 10, "Increment" : 1 },
+        "Rare" : { "MinValue" : 8, "MaxValue" : 13, "Increment" : 1 },
+        "Epic" : { "MinValue" : 11, "MaxValue" : 16, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 14, "MaxValue" : 19, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Acrobat's" ],
+      "Suffixes": [ "the Acrobat" ]
+    },
+    {
+      "Type" : "ModifyAttackStaminaUse",
+      "DisplayText" : "공격 스태미나 소모량 -{0:0.#}%",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch",
+          "Tool"
+        ],
+        "ItemUsesStaminaOnAttack" : true
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 5, "MaxValue" : 10, "Increment" : 1 },
+        "Rare" : { "MinValue" : 8, "MaxValue" : 13, "Increment" : 1 },
+        "Epic" : { "MinValue" : 11, "MaxValue" : 16, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 14, "MaxValue" : 19, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Gladiator's" ],
+      "Suffixes": [ "the Gladiator" ]
+    },
+    {
+      "Type" : "ModifyBlockStaminaUse",
+      "DisplayText" : "방어 스태미나 소모량 -{0:0.#}%",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Shield"
+        ],
+        "ItemHasBlockPower" : true
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 5, "MaxValue" : 10, "Increment" : 1 },
+        "Rare" : { "MinValue" : 8, "MaxValue" : 13, "Increment" : 1 },
+        "Epic" : { "MinValue" : 11, "MaxValue" : 16, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 14, "MaxValue" : 19, "Increment" : 1 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Guardian's" ],
+      "Suffixes": [ "the Guardian" ]
+    },
+    {
+      "Type" : "Indestructible",
+      "DisplayText" : "내구도 무한",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "ModifyDurability"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch",
+          "Tool",
+          "Shield",
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder"
+        ],
+        "AllowedRarities" : [
+          "Epic",
+          "Legendary"
+        ]
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Indestructible" ],
+      "Suffixes": [ "Indestructibility" ]
+    },
+    {
+      "Type" : "Weightless",
+      "DisplayText" : "무게 0",
+      "Requirements" : {
+        "ExclusiveEffectTypes" : [
+          "ReduceWeight"
+        ],
+        "AllowedItemTypes" : [
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "Bow",
+          "Torch",
+          "Tool",
+          "Shield",
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder"
+        ]
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Weightless" ],
+      "Suffixes": [ "Weightlessness" ]
+    },
+    {
+      "Type" : "AddCarryWeight",
+      "DisplayText" : "최대 무게 +{0}",
+      "Requirements" : {
+        "AllowedItemTypes" : [
+          "Helmet",
+          "Chest",
+          "Legs",
+          "Shoulder",
+          "Utility"
+        ]
+      },
+      "ValuesPerRarity" : {
+        "Magic" : { "MinValue" : 5, "MaxValue" : 10, "Increment" : 5 },
+        "Rare" : { "MinValue" : 10, "MaxValue" : 15, "Increment" : 5 },
+        "Epic" : { "MinValue" : 15, "MaxValue" : 25, "Increment" : 5 },
+        "Legendary" : { "MinValue" : 20, "MaxValue" : 50, "Increment" : 5 }
+      },
+      "SelectionWeight" : 1,
+      "Prefixes": [ "Pocketed" ],
+      "Suffixes": [ "Pockets" ]
+    }
+  ]
+}

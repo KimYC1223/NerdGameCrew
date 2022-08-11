@@ -1,0 +1,324 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  color:white;
+}
+
+body::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari, Opera*/
+
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  -ms-overflow-style: none !important; /* IE and Edge */
+    scrollbar-width: none !important; /* Firefox */
+}
+
+a{text-decoration: none;}
+a:link {color:rgb(224, 47, 0);}
+a:visited {color:rgb(224, 47, 0);}
+a:hover {color:rgb(224, 47, 0);}
+a:active {color:rgb(224, 47, 0);}
+
+.draggable {
+  -webkit-user-select:text;
+  -moz-user-select:text;
+  -ms-user-select:text;
+  user-select:text
+}
+
+li {
+  -webkit-user-select:text;
+  -moz-user-select:text;
+  -ms-user-select:text;
+  user-select:text
+}
+
+.footer {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  bottom: 0;
+  text-align: center;
+  background: rgba(10, 10, 10,0.8);
+}
+
+.mainDiv {
+  width:1100px;
+  display: block;
+  position: relative;
+  padding:50px;
+  top:80px;
+  left:50%;
+  transform: translateX(-50%);
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 200px;
+}
+
+.logo_img {
+  width: 50%;
+}
+
+.bossDiv {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1160px;
+  background: #090a0d;
+  padding: 0 20px;
+  position: relative;
+  transform: translateX(-50%);
+  left:50%;
+  text-align: center;
+}
+
+.tg {
+  display: inline-block;
+}
+
+.tg img {
+  border-radius: 12px;
+  border:1px solid rgba(255,255,255,0.1);
+  margin: 10px;
+  display: block;
+}
+
+.subDib {
+  text-align: left;
+  width: 1000px;
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 50px;
+  margin-top: 50px;
+}
+
+.highlight {
+  color : rgb(255, 153, 0);
+  transition: 0.2s;
+  cursor:copy;
+}
+
+.highlight:hover {
+  color : rgb(230, 0, 0);
+}
+
+.titleHeader {
+  font-size: 30px;
+  font-weight: 700;
+  border-left: 5px solid rgb(224, 47, 0);
+  padding: 5px 20px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.subDib ul {
+  margin-left: 50px;
+  line-height: 40px;
+}
+
+.cardButton {
+  width: calc(33.33% - 5px);
+  margin-left: 5px;
+  display: inline-block;
+  float:left;
+  border-radius: 5px;
+  cursor:pointer;
+  background-color: rgb(24, 24, 24);
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cardButton:hover {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.cardButton img {
+  width: 100%;
+  display: block;
+}
+
+.cardTitle {
+  padding-left: 30px;
+  line-height: 40px;
+  height: 40px;
+  display: block;
+}
+
+.tg-0lax a {display: block; margin-bottom: 5px;}
+
+.clearDiv, .NotClearDiv {
+  display: inline-block;
+  padding: 3px 10px;
+  font-weight: 300;
+  font-size: 12px;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.clearDiv {
+  background-color: rgb(145, 0, 0);
+}
+
+.NotClearDiv {
+  background-color: rgb(73, 73, 73);
+}
+
+.cardPlace {
+  width:100%; height:740px;
+}
+
+.not_clear {font-weight: 300}
+.not_clear:link {color:rgb(255, 255, 255);}
+.not_clear:visited {color:rgb(255, 255, 255);}
+.not_clear:hover {color:rgb(255, 255, 255);}
+.not_clear:active {color:rgb(255, 255, 255);}
+
+.grafana {height: 400px;}
+
+.screenShot {
+  width:calc(25% - 5px);
+  margin-right: 5px;
+  float:left;
+  display: block;
+  cursor:pointer;
+}
+
+.screenShot img {width: 100%;}
+
+.cardPlace2 {
+  height:383px;
+}
+
+.warningDiv {
+  margin-left: 30px;
+  background: rgba(224, 47, 0,0.2);
+  margin-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 40px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.warning {
+  width: calc(100% - 0px);
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 5px 20px 5px 30px;
+  background-color: rgb(224, 47, 0);
+  color:white;
+  margin-bottom: 10px;
+}
+
+.download {
+  border-radius: 8px;
+  height: 30px;
+  width: calc(100% - 180px);
+  background-color: #1d1d1d;
+  margin: 10px 0px 10px 50px;
+  padding: 10px 40px;
+  cursor: pointer;
+  line-height: 30px;
+  transition: 0.2s;
+  font-size: 18px;
+}
+
+.download:hover {
+  background-color: #2d2c2c;
+}
+
+.Install {
+  width: calc(100% - 100px);
+  margin: 10px 0px 10px 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media(max-width:1200px) {
+  .mainDiv {
+    width:420px;
+    top:30px;
+    margin-bottom: 120px;
+    border:none;
+  }
+
+  .clearDiv, .NotClearDiv {display: none;}
+  .bossDiv {
+    width:100vw;
+  }
+
+  .subDib {
+    width: 420px;
+  }
+
+  .tg img {
+    width:80px;
+    margin: 5px;
+  }
+
+  .thumbnail {
+    display: none;
+  }
+
+  .cardPlace {
+    height:440px;
+  }
+
+  .cardTitle {
+    padding:0;
+    text-align: center;
+  }
+
+  .grafana {height: 300px;}
+
+
+  .logo_img {
+    width: 80%;
+  }
+
+  .titleHeader {
+    font-size: 24px;
+  }
+
+  .screenShot {
+    width:calc(50% - 5px);
+  }
+
+  .cardPlace2 {
+    height:735px;
+  }
+
+  .footer {
+    width: 100vw;
+  }
+
+  .download {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 30px;
+    width: calc(100% - 40px);
+    text-align: center;
+  }
+
+  .Install {
+    width: calc(100% - 40px);
+    margin-left: 30px;
+  }
+}

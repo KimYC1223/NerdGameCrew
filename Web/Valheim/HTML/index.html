@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta property="og:image" content="http://ngc-valheim.xyz/IMG/Logo2.jpg">
+  <meta property="og:title" content="머저리 게임크루 Valheim 웹서버">
+  <meta property="og:description" content="NGC용 Valheim 공식 웹서버">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../CSS/index.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="../IMG/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../IMG/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../IMG/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../IMG/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../IMG/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../IMG/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../IMG/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../IMG/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../IMG/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../IMG/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../IMG/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../IMG/favicon-16x16.png">
+  <link rel="manifest" href="../IMG/manifest.json">
+  <meta name="msapplication-TileColor" content="#111217">
+  <meta name="msapplication-TileImage" content="../IMG/ms-icon-144x144.png">
+  <meta name="theme-color" content="#111217">
+  <title>머저리 게임크루 : 발헤임 온라인 서버</title>
+</head>
+<body bgcolor="#111217">
+  <div class="mainDiv">
+    <img src="../IMG/Logo.png" alt="" class="logo_img">
+
+    <div class="subDib">
+      <span class="titleHeader">🕹️ 머저리 게임 크루 Valheim 서버</span>
+
+      <div class="bossDiv">
+        <table class="tg">
+          <tr>
+            <th class="tg-0lax">
+              <img src="../IMG/boss_1_C.png" alt="">
+              <a href="https://namu.wiki/w/Valheim/%EC%83%9D%EB%AC%BC#s-3.3.1">에이크쉬르</a>
+              <span class="clearDiv">2022.06.19</span>
+            </th>
+              <th class="tg-0lax"><img src="../IMG/boss_2_C.png" alt="">
+              <a href="https://namu.wiki/w/Valheim/%EC%83%9D%EB%AC%BC#s-3.3.2">엘더</a>
+              <span class="clearDiv">2022.07.03</span>
+            </th>
+              <th class="tg-0lax"><img src="../IMG/boss_3_C.png" alt="">
+              <a href="https://namu.wiki/w/Valheim/%EC%83%9D%EB%AC%BC#s-3.3.3">본매스</a>
+              <span class="clearDiv">2022.07.17</span>
+            </th>
+              <th class="tg-0lax"><img src="../IMG/boss_4.png" alt="">
+              <a class="not_clear" href="https://namu.wiki/w/Valheim/%EC%83%9D%EB%AC%BC#s-3.3.4">모더</a>
+              <span class="NotClearDiv">도전하지 않음</span>
+            </th>
+              <th class="tg-0lax"><img src="../IMG/boss_5.png" alt="">
+              <a class="not_clear" href="https://namu.wiki/w/Valheim/%EC%83%9D%EB%AC%BC#s-3.3.5">야글루스</a>
+              <span class="NotClearDiv">도전하지 않음</span>
+            </th>
+          </tr>
+        </table>
+      </div>
+
+      <table style="margin-left:10px">
+        <tr>
+          <td width="30%" class="thumbnail">
+            <img src="../IMG/Side.png" width="100%" alt="" style="display:block;margin-top:5px;">
+          </td>
+          <td width="65%">
+            <ul>
+              <li>Nerd Game Crew를 위한 Valheim 24시 온라인 서버</li>
+              <li>Server Environment : <a href="https://aws.amazon.com/ko/ec2/">AWS EC2</a> t2.medium (CPU 2 Core, 4GB Ram)</li>
+              <li>Valheim Server demon : <a href="https://github.com/Nimdy/Dedicated_Valheim_Server_Script">Nimdy/Dedicated_Valheim_Server_Script.git</a></li>
+              <li>서버 IP 및 접속 발헤임 포트 : <span class="highlight draggable">15.165.236.77:2456</span></li>
+              <li>서버 입장 비밀번호는 관리자에게 문의</li>
+              <li>Web 서버 제작 : <a href="https://KimYC1223.github.io">KimYC1223</a></li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="subDib">
+      <span class="titleHeader">실시간 서버 컴퓨팅 현황</span>
+      <iframe src="http://15.165.236.77:3000/d-solo/NGC/ngc_panel?orgId=1&refresh=1s&panelId=2" width="100%" class="grafana" frameborder="0"></iframe>
+      <ul>
+        <li>Promethus와 Garafana docker 서비스를 통한 컴퓨팅 리소스 현황</li>
+      </ul>
+    </div>
+
+    <div class="subDib">
+      <span class="titleHeader">NGC서버 Valheim 플러그인</span>
+      <div class="cardPlace">
+        <div class="cardButton">
+          <img src="../IMG/plugin_01.png" alt="" class="cardImages">
+          <span class="cardTitle draggable">Grave keeper</span>
+        </div>
+
+        <div class="cardButton">
+          <img src="../IMG/plugin_02.png" alt="" class="cardImages">
+          <span class="cardTitle draggable">Map Teleporter</span>
+        </div>
+
+        <div class="cardButton">
+          <img src="../IMG/plugin_03.png" alt="" class="cardImages">
+          <span class="cardTitle draggable">Epic Loot</span>
+        </div>
+
+        <div class="cardButton">
+          <img src="../IMG/plugin_04.png" alt="" class="cardImages">
+          <span class="cardTitle draggable">BepInEx</span>
+        </div>
+
+        <div class="cardButton">
+          <img src="../IMG/plugin_05.png" alt="" class="cardImages">
+          <span class="cardTitle draggable">Extented Item Data Framework</span>
+        </div>
+
+        <div class="cardButton">
+          <img src="../IMG/plugin_06.png" alt="" class="cardImages">
+          <span class="cardTitle draggable">More Slots</span>
+        </div>
+
+        <div class="cardButton">
+          <img src="../IMG/plugin_07.png" alt="" class="cardImages">
+          <span class="cardTitle draggable">Trash Items</span>
+        </div>
+
+        <div class="cardButton">
+          <img src="../IMG/plugin_08.png" alt="" class="cardImages">
+          <span class="cardTitle draggable">Unresticted Portals</span>
+        </div>
+
+        <div class="cardButton">
+          <img src="../IMG/plugin_09.png" alt="" class="cardImages">
+          <span class="cardTitle draggable">Valheim Plus</span>
+        </div>
+      </div>
+
+      <script>
+        let cards = document.getElementsByClassName('cardImages')
+        let url = ['https://valheim.thunderstore.io/package/mtnewton/Gravekeeper/2.2.0/',
+                   'https://valheim.thunderstore.io/package/exel80/MapTeleporter/1.0.0/',
+                   'https://valheim.thunderstore.io/package/RandyKnapp/EpicLoot/',
+                   'https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/5.4.1901/',
+                   'https://valheim.thunderstore.io/package/RandyKnapp/ExtendedItemDataFramework/1.0.7/',
+                   'https://valheim.thunderstore.io/package/Fang86/MoreSlots/1.1.7/',
+                   'https://valheim.thunderstore.io/package/virtuaCode/TrashItems/1.2.4/',
+                   'https://valheim.thunderstore.io/package/xAfflict/UnrestrictedPortals/1.4.2/',
+                   'https://valheim.thunderstore.io/package/ValheimPlus/ValheimPlus/9.9.8/']
+        for(let i = 0; i < cards.length; i++) {
+          cards[i].addEventListener('click',() => {
+            location.href= url[i]
+          })
+        }
+      </script>
+      <ul style="float:none;">
+        <li>발헤임 플러그인 설치 방법및 적용 방법은 <a href="https://wormyeeee.tistory.com/316">여기</a>를 참고하세요</li>
+        <li>플러그인 이름을 복사하고, r2modman의 online탭에서 설치하길 바랍니다.</li>
+        <li>모든 플러그인은 가능하면 enalble한 채로 게임에 접속해주세요</li>
+        <li>특히, <a href="https://toktokii.tistory.com/entry/%EB%B0%9C%ED%97%A4%EC%9E%84-%ED%94%8C%EB%9F%AC%EC%8A%A4Valheim-PLUS-%EB%AA%A8%EB%93%9C-%EA%B8%B0%EB%8A%A5-%EC%84%A4%EC%B9%98-%EB%B0%A9%EB%B2%95">발헤임 플러스</a> 플러그인을 disable 할 경우, 아예 서버에 접속 할 수 없습니다.</li>
+      </ul>
+
+      <div class="warningDiv">
+        <span class="warning">🚨 필수 공지사항</span>
+        <ul style="float:none;">
+          <li>게임의 재미를 30배 올려줄 Magic 아이템 추가 모드인 <a href="https://dotobi-game.tistory.com/873">Epic Loot</a> 플러그인은 별도의 한글화 작업이 반드시 필요합니다.</li>
+          <li>일단 아래 파일을 다운로드받습니다.</li>
+        </ul>
+        <div class="download" id="download">
+          💾 &nbsp;발헤임 Epic Loot 한글화 파일
+        </div>
+
+        <script>
+          let download = document.getElementById('download')
+          download.addEventListener('click',() => {
+            location.href= 'https://blog.kakaocdn.net/dn/emYavh/btq1dzUVskr/LNKwQRUY2OzV36eKauaqFK/magiceffects.json?attach=1&knm=tfile.json'
+          })
+        </script>
+
+        <ul style="float:none;">
+          <li>다운로드 받은 파일을 본인의 컴퓨터에 설치해야합니다.</li>
+          <li>r2modman을 켜고, 왼쪽의 setting을 누르고, Browse profile folder를 누릅니다.</li>
+        </ul>
+
+        <img src="../IMG/Install.png" class="Install" alt="" id="Install">
+        <script>
+          let Install = document.getElementById('Install')
+          Install.addEventListener('click',() => {
+            location.href= '../IMG/Install.png'
+          })
+        </script>
+
+        <ul style="float:none;">
+          <li>그 후, 열리는 파일 탐색기에서 <span class="highlight">BepInEx/plugins/RandyKnapp-EpicLoot</span>로 이동합니다.</li>
+          <li>다운로드 받은 파일을 해당 위치에 붙혀넣기 합니다. (magiceffects.json) 덮어쓰기하냐고 물어보면 덮어쓰기합니다.</li>
+          <li>완료후 r2modman의 Start modded를 눌러 게임을 시작합니다</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subDib">
+      <span class="titleHeader">모험 일지</span>
+      <div class="cardPlace2">
+        <div class="screenShot">
+          <img src="../IMG/screenshot_0.png" alt="">
+        </div>
+
+        <div class="screenShot">
+          <img src="../IMG/screenshot_1.png" alt="">
+        </div>
+
+        <div class="screenShot">
+          <img src="../IMG/screenshot_2.png" alt="">
+        </div>
+
+        <div class="screenShot">
+          <img src="../IMG/screenshot_3.png" alt="">
+        </div>
+
+        <div class="screenShot">
+          <img src="../IMG/screenshot_4.png" alt="">
+        </div>
+
+        <div class="screenShot">
+          <img src="../IMG/screenshot_5.png" alt="">
+        </div>
+
+        <div class="screenShot">
+          <img src="../IMG/screenshot_6.png" alt="">
+        </div>
+
+        <div class="screenShot">
+          <img src="../IMG/screenshot_7.png" alt="">
+        </div>
+
+        <div class="screenShot">
+          <img src="../IMG/screenshot_8.png" alt="">
+        </div>
+
+        <div class="screenShot">
+          <img src="../IMG/screenshot_9.png" alt="">
+        </div>
+
+        <div class="screenShot">
+          <img src="../IMG/screenshot_10.png" alt="">
+        </div>
+
+        <div class="screenShot">
+          <img src="../IMG/screenshot_11.png" alt="">
+        </div>
+
+      </div>
+
+      <script>
+        let screenShots = document.getElementsByClassName('screenShot')
+
+        for(let i = 0; i < screenShots.length; i++) {
+          screenShots[i].addEventListener('click',() => {
+            location.href= `../IMG/screenshot_${i}.png`
+          })
+        }
+      </script>
+    </div>
+  </div>
+
+  <div class="footer">
+    Presented by <a href="https://KimYC1223.github.io">KimYC1223</a>
+  </div>
+</body>
+</html>
