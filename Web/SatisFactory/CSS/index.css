@@ -5,7 +5,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans KR', sans-serif;
-  color:black;
 }
 
 body::-webkit-scrollbar {
@@ -53,6 +52,7 @@ li {
   bottom: 0;
   text-align: center;
   background: rgba(10, 10, 10,0.8);
+  color:white;
 }
 
 .mainDiv {
@@ -68,7 +68,6 @@ li {
   border: 1px solid rgba(255,255,255,0.1);
   margin-bottom: 200px;
   height: 1200px;
-  background-color: #e2e2e2;
   color:black;
 }
 
@@ -125,16 +124,40 @@ li {
   background-color: rgba(0,0,0,0.8);
   padding: 10px 20px;
   margin-top: 20px;
+  color:white;
 }
 
+hr {
+  margin: 20px 0px;
+}
+
+.subDivTitle{
+  display: block;
+  text-align: left;
+  border-left : 15px solid rgb(31, 52, 139);
+  height: 40px;
+  padding-left: 10px;
+  line-height: 40px;
+}
+
+.subDivTitle {
+  font-size: 25px;
+  color:rgb(46, 46, 46);
+  font-weight: bold;
+}
 
 /* ========================================================================================================= */
 /*  모바일 버전 코드                                                                                             */
 /* ========================================================================================================= */
 @media(max-width:1200px) {
   .mainDiv {
+    top:20px;
+    padding-top:10px;
+  }
+
+  .mainDiv {
     width:420px;
-    top:30px;
+    top:15px;
     margin-bottom: 120px;
     border:none;
   }
