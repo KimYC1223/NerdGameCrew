@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta charset="utf-8" />
+        <meta property="og:image" content="http://ngc-valheim.xyz/Web/SatisFactory/IMG/Logo2.jpg">
+        <meta property="og:title" content="영찬의 게임 일지">
+        <meta property="og:description" content="영찬의 게임일지 : 새티스 팩토리">
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../SatisFactory/CSS/index.css">
+        <link rel="apple-touch-icon" sizes="57x57" href="../SatisFactory/IMG/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../SatisFactory/IMG/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../SatisFactory/IMG/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../SatisFactory/IMG/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../SatisFactory/IMG/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../SatisFactory/IMG/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../SatisFactory/IMG/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../SatisFactory/IMG/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../SatisFactory/IMG/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="../SatisFactory/IMG/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../SatisFactory/IMG/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../SatisFactory/IMG/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../SatisFactory/IMG/favicon-16x16.png">
+        <link rel="manifest" href="../SatisFactory/IMG/manifest.json">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="../SatisFactory/IMG/ms-icon-144x144.png">
+        <meta name="theme-color" content="#FFFFFF">
+        <title>영찬의 게임일지 : 새티스 팩토리</title>
+      </head>
+<body>
+
+  <div class="mainDiv">
+    <!--
+    <div class="titleDiv">
+      <div class="titleImageDiv">
+        <img class="titleImageBackground" src="../SatisFactory/IMG/BG.png" alt="">
+        <div class="titleImageContent">
+          <img class="titleImageLogo" src="../SatisFactory/IMG/SatisFactoryLogoTransparent.png" alt="">
+          <span class="MainTitle">영찬의 게임일지 : SATIS FACTORY</span>
+        </div>
+      </div>
+    </div>
+    <hr>
+    -->
+    <!--############################################################################################################################################################################################
+    #
+    #  플레이 정보
+    #  플레이 시간과 같은 정보를 적는다
+    #
+    ############################################################################################################################################################################################-->
+    <!--
+    <div class="subDiv">
+      <div class="subDivTitle">
+        <span>플레이 정보</span>
+      </div>
+
+      <div class="playInfoImage">
+
+      </div>
+
+      <table class="playInfoTable_Web">
+        <tr> <td> 플레이 타임 </td> <td> 시작 시간 </td> <td> 시작 바이옴 </td> <td> 마일스톤 단계 </td> </tr>
+        <tr> <td> 60.3 시간 </td> <td> 2022.08.06 </td> <td> 잔디 평아 </td> <td>
+            <span class="playInfoMain">3-4 Tear</span><br />
+            <span class="playInfoSub">프로젝트 어셈블리: 플랫폼</span>
+          </td>
+        </tr>
+      </table>
+
+      <table class="playInfoTable_Mobile">
+        <tr> <td> 플레이 타임 </td>  <td> 60.3 시간 </td>    </tr>
+        <tr> <td> 시작 시간 </td>    <td> 2022.08.06 </td>  </tr>
+        <tr> <td> 시작 바이옴 </td>  <td> 잔디 평야 </td>    </tr>
+        <tr> <td> 마일스톤 단계 </td>
+          <td>
+            3-4 Tear<br />
+            <span class="playInfoSub">프로젝트 어셈블리: 플랫폼</span>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+
+    <hr>
+    -->
+    <!--############################################################################################################################################################################################
+    #
+    #  워크 플로우
+    #  Kanban 스타일의 워크 플로우 작성
+    #
+    ############################################################################################################################################################################################-->
+    <div class="subDiv">
+      <div class="subDivTitle">
+        <span>워크 플로우</span>
+      </div>
+
+      <div class="BarMask" width="100%">
+        <div class="ToDoBar" id="ToDoBar" style="width : calc(<%= 100 * (ToDo.length / (ToDo.length + InProgress.length + Done.length)) %>% - 20px)">To Do</div>
+        <div class="InProgressBar" id="InProgressBar" style="width : calc(<%= 100 * (InProgress.length / (ToDo.length + InProgress.length + Done.length)) %>% - 20px)">In Progress</div>
+        <div class="DoneBar" id="DoneBar" style="width : calc(<%= 100 * (Done.length / (ToDo.length + InProgress.length + Done.length)) %>% - 20px)">Done</div>
+      </div>
+
+      <div class="TodoBoard">
+        <span class="boardTitle">To Do : 해야 할 업무</span>
+        <% for (var i = 0 ; i <ToDo.length; i++) { %>
+          <% var item = ToDo[i] %>
+          <div class="KanbanItem TodoItem">
+            <span class="KanbanItemPriority"><%= item['priority']%></span>
+            <span class="KanbanItemName"><%= item['name']%></span>
+            <img src="../SatisFactory/IMG/<%= item['type']%>.png" style="width:50px;">
+            <span class="KanbanItemType"><%= item['type']%></span>
+            <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
+            <span class="KanbanItemDesc"><%= item['Description']%></span>
+          </div>
+        <% } %>
+      </div>
+      <div class="TodoBoard">
+        <span class="boardTitle">In Progress : 진행중인 업무</span>
+        <% for (var i = 0 ; i <InProgress.length; i++) { %>
+          <% var item = InProgress[i] %>
+          <div class="KanbanItem InProgressItem">
+            <span class="KanbanItemPriority"><%= item['priority']%></span>
+            <span class="KanbanItemName"><%= item['name']%></span>
+            <img src="../SatisFactory/IMG/<%= item['type']%>.png" style="width:50px;">
+            <span class="KanbanItemType"><%= item['type']%></span>
+            <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
+            <span class="KanbanItemDesc"><%= item['Description']%></span>
+          </div>
+        <% } %>
+      </div>
+      <div class="TodoBoard">
+        <span class="boardTitle">Done : 완료한 업무</span>
+        <% for (var i = 0 ; i <Done.length; i++) { %>
+          <% var item = Done[i] %>
+          <div class="KanbanItem DoneItem">
+            <span class="KanbanItemPriority"><%= item['priority']%></span>
+            <span class="KanbanItemName"><%= item['name']%></span>
+            <img src="../SatisFactory/IMG/<%= item['type']%>.png" style="width:50px;">
+            <span class="KanbanItemType"><%= item['type']%></span>
+            <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
+            <span class="KanbanItemDesc"><%= item['Description']%></span>
+          </div>
+        <% } %>
+      </div>
+    </div>
+
+    <hr>
+
+    <!--############################################################################################################################################################################################
+    #
+    #  마일스톤
+    #  해금한 마일스톤과 해금하지 못한 마일스톤을 적는다
+    #
+    ############################################################################################################################################################################################-->
+
+    <!--
+    <div class="subDiv">
+      <div class="subDivTitle">
+        <span>마일스톤</span>
+      </div>
+    </div>
+
+    <hr>
+    -->
+
+    <!--############################################################################################################################################################################################
+    #
+    #  대체 제작법
+    #  하드 드라이브 분석을 통해 얻은 대체 제작법들을 적는다
+    #
+    ############################################################################################################################################################################################-->
+    <!--
+    <div class="subDiv">
+      <div class="subDivTitle">
+        <span>대체 제작법</span>
+      </div>
+    </div>
+
+    <hr>
+    -->
+
+    <!--############################################################################################################################################################################################
+    #
+    #  전력 생산량
+    #  월드 내 전력 생산 및 소비량 통계를 보여준다
+    #
+    ############################################################################################################################################################################################-->
+    <!--
+    <div class="subDiv">
+      <div class="subDivTitle">
+        <span>전력 생산량</span>
+      </div>
+    </div>
+
+    <hr>
+    -->
+
+    <!--############################################################################################################################################################################################
+    #
+    #  지도
+    #  월드 지도를 보여준다
+    #
+    ############################################################################################################################################################################################-->
+    <!--
+    <div class="subDiv">
+      <div class="subDivTitle">
+        <span>지도</span>
+      </div>
+    </div>
+
+    <hr>
+    -->
+
+    <!--############################################################################################################################################################################################
+    #
+    #  연구노트
+    #  새티스 팩토리 연구노트를 작 (아이패드로 작성한 스크린 샷)
+    #
+    ############################################################################################################################################################################################-->
+    <!--
+    <div class="subDiv">
+      <div class="subDivTitle">
+        <span>연구노트</span>
+      </div>
+    </div>
+
+    <hr>
+    -->
+
+    <!--############################################################################################################################################################################################
+    #
+    #  스크린샷
+    #  스크린샷을 모아둔 장소이다. (4의 배수 추천)
+    #
+    ############################################################################################################################################################################################-->
+    <!--
+    <div class="subDiv">
+      <div class="subDivTitle">
+        <span>스크린 샷</span>
+      </div>
+    </div>
+    -->
+  </div>
+
+  <div class="footer">
+    Presented by <a href="https://KimYC1223.github.io">KimYC1223</a>
+  </div>
+</body>
+</html>
