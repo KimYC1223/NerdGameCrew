@@ -34,7 +34,7 @@
 <body>
 
   <div class="mainDiv">
-    <!--
+
     <div class="titleDiv">
       <div class="titleImageDiv">
         <img class="titleImageBackground" src="../SatisFactory/IMG/BG.png" alt="">
@@ -45,26 +45,22 @@
       </div>
     </div>
     <hr>
-    -->
+
     <!--############################################################################################################################################################################################
     #
     #  플레이 정보
     #  플레이 시간과 같은 정보를 적는다
     #
     ############################################################################################################################################################################################-->
-    <!--
+
     <div class="subDiv">
       <div class="subDivTitle">
         <span>플레이 정보</span>
       </div>
 
-      <div class="playInfoImage">
-
-      </div>
-
       <table class="playInfoTable_Web">
-        <tr> <td> 플레이 타임 </td> <td> 시작 시간 </td> <td> 시작 바이옴 </td> <td> 마일스톤 단계 </td> </tr>
-        <tr> <td> 60.3 시간 </td> <td> 2022.08.06 </td> <td> 잔디 평아 </td> <td>
+        <tr> <td> 버전 </td> <td> 플레이 타임 </td> <td> 시작 시간 </td> <td> 시작 바이옴 </td> <td> 마일스톤 단계 </td> </tr>
+        <tr> <td> Update 5 </td> <td> 60.3 시간 </td> <td> 2022.08.06 </td> <td> 잔디 평아 </td> <td>
             <span class="playInfoMain">3-4 Tear</span><br />
             <span class="playInfoSub">프로젝트 어셈블리: 플랫폼</span>
           </td>
@@ -72,9 +68,10 @@
       </table>
 
       <table class="playInfoTable_Mobile">
-        <tr> <td> 플레이 타임 </td>  <td> 60.3 시간 </td>    </tr>
-        <tr> <td> 시작 시간 </td>    <td> 2022.08.06 </td>  </tr>
-        <tr> <td> 시작 바이옴 </td>  <td> 잔디 평야 </td>    </tr>
+        <tr> <td> 버전 </td>         <td> Update 5 </td>         </tr>
+        <tr> <td> 플레이 타임 </td>  <td> 60.3 시간 </td>  </tr>
+        <tr> <td> 시작 시간 </td>    <td> 2022.08.06 </td> </tr>
+        <tr> <td> 시작 바이옴 </td>  <td> 잔디 평야 </td>  </tr>
         <tr> <td> 마일스톤 단계 </td>
           <td>
             3-4 Tear<br />
@@ -86,7 +83,6 @@
     </div>
 
     <hr>
-    -->
     <!--############################################################################################################################################################################################
     #
     #  워크 플로우
@@ -106,48 +102,70 @@
 
       <div class="KanbanBoardWrap">
         <div class="KanbanBoard">
-          <span class="boardTitle">To Do : 해야 할 업무</span>
-          <div class="KanbanScrollDoiv">
-            <% for (var i = 0 ; i <ToDo.length; i++) { %>
-              <% var item = ToDo[i] %>
-              <div class="KanbanItem TodoItem draggable">
-                <img src="../SatisFactory/IMG/<%= item['type']%>.png" style="width:50px;">
-                <span class="KanbanItemPriority"><%= item['priority']%></span>
-                <span class="KanbanItemName"><%= item['name']%></span>
-                <span class="KanbanItemType"><%= item['type']%></span>
-                <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
-                <span class="KanbanItemDesc"><%= item['Description']%></span>
-              </div>
-            <% } %>
+          <span class="boardTitle ToDoTitle"><b>To Do</b>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;해야 할 업무<span class="KanbanItemNum"><%= ToDo.length%></span></span>
+          <div class="KanbanScrollDiv">
+            <div class="KanbanScrollDivChild">
+              <% for (var i = 0 ; i <ToDo.length; i++) { %>
+                <% var item = ToDo[i] %>
+                <div class="KanbanItem DoneItem ">
+                  <div class="KanbanItemIcon">
+                    <img src="../SatisFactory/IMG/<%= item['type']%>.png"> 
+                  </div>
+                  <div class="KanbanItemBody">
+                    <div><span class="KanbanItemPriority <%= item['priority']%>">우선 순위 <%= item['priority']%></span></div>
+                    <span class="KanbanItemName"><%= item['name']%></span>
+                    <span class="KanbanItemDesc"><%= item['Description']%></span>
+                    <span class="KanbanItemType"><%= item['type']%></span>
+                    <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
+                  </div>
+                </div>
+              <% } %>
+            </div>
           </div>
         </div>
         <div class="KanbanBoard">
-          <span class="boardTitle">In Progress : 진행중인 업무</span>
-          <% for (var i = 0 ; i <InProgress.length; i++) { %>
-            <% var item = InProgress[i] %>
-            <div class="KanbanItem InProgressItem draggable">
-              <img src="../SatisFactory/IMG/<%= item['type']%>.png" style="width:50px;">
-              <span class="KanbanItemPriority"><%= item['priority']%></span>
-              <span class="KanbanItemName"><%= item['name']%></span>
-              <span class="KanbanItemType"><%= item['type']%></span>
-              <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
-              <span class="KanbanItemDesc"><%= item['Description']%></span>
+          <span class="boardTitle InProgressTitle"><b>In Progress</b>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;진행중인 업무<span class="KanbanItemNum"><%= InProgress.length%></span></span>
+          <div class="KanbanScrollDiv">
+            <div class="KanbanScrollDivChild">
+              <% for (var i = 0 ; i <InProgress.length; i++) { %>
+                <% var item = InProgress[i] %>
+                <div class="KanbanItem DoneItem ">
+                  <div class="KanbanItemIcon">
+                    <img src="../SatisFactory/IMG/<%= item['type']%>.png"> 
+                  </div>
+                  <div class="KanbanItemBody">
+                    <div><span class="KanbanItemPriority <%= item['priority']%>">우선 순위 <%= item['priority']%></span></div>
+                    <span class="KanbanItemName"><%= item['name']%></span>
+                    <span class="KanbanItemDesc"><%= item['Description']%></span>
+                    <span class="KanbanItemType"><%= item['type']%></span>
+                    <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
+                  </div>
+                </div>
+              <% } %>
             </div>
-          <% } %>
+          </div>
         </div>
         <div class="KanbanBoard">
-          <span class="boardTitle">Done : 완료한 업무</span>
-          <% for (var i = 0 ; i <Done.length; i++) { %>
-            <% var item = Done[i] %>
-            <div class="KanbanItem DoneItem draggable">
-              <img src="../SatisFactory/IMG/<%= item['type']%>.png" style="width:50px;">
-              <span class="KanbanItemPriority"><%= item['priority']%></span>
-              <span class="KanbanItemName"><%= item['name']%></span>
-              <span class="KanbanItemType"><%= item['type']%></span>
-              <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
-              <span class="KanbanItemDesc"><%= item['Description']%></span>
+          <span class="boardTitle DoneTitle"><b>Done</b>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;완료한 업무<span class="KanbanItemNumWhite"><%= Done.length%></span></span>
+          <div class="KanbanScrollDiv">
+            <div class="KanbanScrollDivChild">
+              <% for (var i = 0 ; i <Done.length; i++) { %>
+                <% var item = Done[i] %>
+                <div class="KanbanItem DoneItem ">
+                  <div class="KanbanItemIcon">
+                    <img src="../SatisFactory/IMG/<%= item['type']%>.png"> 
+                  </div>
+                  <div class="KanbanItemBody">
+                    <div><span class="KanbanItemPriority <%= item['priority']%>">우선 순위 <%= item['priority']%></span></div>
+                    <span class="KanbanItemName"><%= item['name']%></span>
+                    <span class="KanbanItemDesc"><%= item['Description']%></span>
+                    <span class="KanbanItemType"><%= item['type']%></span>
+                    <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
+                  </div>
+                </div>
+              <% } %>
             </div>
-          <% } %>
+          </div>
         </div>
       </div>
     </div>
@@ -161,15 +179,41 @@
     #
     ############################################################################################################################################################################################-->
 
-    <!--
+
     <div class="subDiv">
       <div class="subDivTitle">
         <span>마일스톤</span>
       </div>
+
+      <div class="MileStoneMonitor_Web">
+        <div class="MileStoneSideBar">
+          <div>
+            <div class="MileStoneSiderBarButton MS_Done">Tier 0</div>
+            <div class="MileStoneSiderBarButton MS_Done">Tier 1</div>
+            <div class="MileStoneSiderBarButton MS_Done">Tier 2</div>
+            <div class="MileStoneSiderBarButton MS_InProgress MS_Select">Tier 3</div>
+            <div class="MileStoneSiderBarButton MS_ToDo">Tier 4</div>
+            <div class="MileStoneSiderBarButton MS_ToDo">Tier 5</div>
+            <div class="MileStoneSiderBarButton MS_ToDo">Tier 6</div>
+            <div class="MileStoneSiderBarButton MS_ToDo">Tier 7</div>
+            <div class="MileStoneSiderBarButton MS_ToDo">Tier 8</div>
+          </div>
+        </div>
+        <div class="MileStoneSideBody">
+          <% for (var i = 0; i <= 8; i ++ ) { %>
+          <div>
+            <% for (var j = 0; j < MileStone[i].length; j ++ ) { %>
+              <div>
+                <img src = "<%= MileStone[i][j].img%>">
+              </div>
+            <% } %>  
+          </div>
+          <% } %>
+        </div>
+      </div>
     </div>
 
     <hr>
-    -->
 
     <!--############################################################################################################################################################################################
     #

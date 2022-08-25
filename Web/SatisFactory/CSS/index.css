@@ -58,16 +58,15 @@ li {
 .mainDiv {
   width:1100px;
   display: block;
-  position: relative;
+  position: absolute;
   padding:50px;
-  top:80px;
+  padding-top:0px;
+  top:50px;
   left:50%;
   transform: translateX(-50%);
-  text-align: center;
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.1);
   margin-bottom: 200px;
-  height: 1200px;
   color:black;
 }
 
@@ -140,6 +139,10 @@ hr {
   line-height: 40px;
 }
 
+.playInfoSub {
+  font-size: 12px;
+}
+
 .subDivTitle {
   font-size: 25px;
   color:rgb(46, 46, 46);
@@ -151,6 +154,7 @@ hr {
   display: table;
   width: 100%;
   padding-top: 20px;
+  text-align: center;
 }
 
 .playInfoTable_Web tr:first-child {
@@ -162,7 +166,7 @@ hr {
 
 .playInfoTable_Web tr:last-child {
   background-color : #f5f5f5;
-  height: 50px;
+  height: 70px;
 }
 
 .playInfoTable_Mobile {
@@ -189,43 +193,148 @@ hr {
 }
 
 .BarMask div:last-child {color:#202020}
-.ToDoBar { background-color: rgb(73, 73, 73);}
-.InProgressBar { background-color: rgb(13, 110, 224);}
-.DoneBar { background-color: rgb(219, 219, 219);}
+.ToDoBar { background-color: #494949;}
+.InProgressBar { background-color: #0d6ee0;}
+.DoneBar { background-color: #dbdbdb;}
 
-.KanbanScrollDoiv {
+
+.KanbanScrollDiv {
+  width: calc(100% - 50px);
+  height: 480px;
+  position: absolute;
+  display: block;
+  bottom:20px;
+  transform: translateX(-50%);
+  left:50%;
+  border : 1px solid #929292;
+  background-color: #f1f1f1;
+  padding : 5px;
+}
+
+.KanbanScrollDivChild::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera*/
+}
+
+.KanbanScrollDivChild{
   -webkit-user-select:none;
   -moz-user-select:none;
   -ms-user-select:none;
   user-select:none;
   -ms-overflow-style: none !important; /* IE and Edge */
-    scrollbar-width: none !important; /* Firefox */
-}
-
-.KanbanScrollDoiv::-webkit-scrollbar {
-  display: none !important; /* Chrome, Safari, Opera*/
+  scrollbar-width: none !important; /* Firefox */
+  width:100%;
+  height: 100%;
+  overflow: scroll;
 }
 
 .KanbanBoardWrap{
   width: 100%;
   overflow: hidden;
-  height: 800px;
+  height: 600px;
 }
 
 .KanbanBoard {
-  width: calc(33.333% - 4px);
+  width: calc(33.3% - 3px);
   background-color: #e8e8e8;
   border-radius: 10px;
   float:left;
   margin-right: 3px;
   overflow: hidden;
   height: 100%;
-  padding:20px;
+  padding:0px;
+  position: relative;
 }
 
 .KanbanBoard:last-child {
   margin-right: 0;
 }
+
+.boardTitle {
+  width: calc(100% - 45px);
+  line-height: 50px;
+  margin-top: 20px;
+  padding-left: 30px;
+  text-align: left;
+  height: 50px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.ToDoTitle { border-left : 15px solid #2e2e2e; background-color: #494949; color:white}
+.InProgressTitle { border-left : 15px solid #094d9b; background-color: #0d6ee0; color:white}
+.DoneTitle { border-left : 15px solid #aaaaaa; background-color: #c5c5c5;}
+
+.KanbanItemNum, .KanbanItemNumWhite {position: absolute; right:20px; font-size: 60px; color:rgba(255, 255, 255, 0.5)}
+.KanbanItemNumWhite:last-child {color:rgba(0, 0, 0, 0.5)}
+
+.KanbanItem{
+  width: calc(100% - 20px);
+  height: 130px;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 3px;
+  margin-bottom: 5px;
+  padding: 10px;
+  position: relative;
+}
+
+.KanbanItemIcon {
+  width: 50px;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  right:0px;
+}
+
+.KanbanItemIcon img {
+  width:100%;
+  opacity: 0.4;
+}
+
+.KanbanItemPriority{
+  display: inline-block;
+  padding:2px 10px;
+  font-size: 9px;
+  color:white;
+  width: auto;
+  border-radius: 20px;
+}
+
+.high {background-color: #9a0924;}
+.normal {background-color: #094d9b;}
+.low {background-color: #117134;}
+
+.KanbanItemName {
+  font-size: 18px;
+  display: block;
+  line-height: 40px;
+}
+
+.KanbanItemDesc {
+  font-size: 12px;
+  display: block;
+  line-height: 18px;
+  width: calc(100% - 70px);
+  word-break: keep-all;
+}
+
+.KanbanItemType {
+  position: absolute;
+  right: 10px;
+  bottom:0;
+  color:#ebebeb;
+  font-size: 24px;
+}
+
+.KanbanItemTypeKorean {
+  position: absolute;
+  right: 10px;
+  bottom:27px;
+  color:#ebebeb;
+  font-size: 12px;
+}
+
 
 /* ========================================================================================================= */
 /*  모바일 버전 코드                                                                                             */
@@ -271,6 +380,7 @@ hr {
     display: table;
     width: 100%;
     padding-top: 20px;
+    text-align: center;
   }
 
   .playInfoTable_Mobile tr td:first-child {
@@ -290,11 +400,14 @@ hr {
     font-size: 12px;
   }
 
+  .ToDoBar { color : rgba(0,0,0,0) !important;}
+  .InProgressBar { color : rgba(0,0,0,0) !important;}
+  .DoneBar { color : rgba(0,0,0,0) !important;}
+
   .KanbanBoardWrap{
-    
     width: 100%;
     overflow: hidden;
-    height: 1240px;
+    height: 1520px;
   }
   
   .KanbanBoard {
@@ -302,12 +415,18 @@ hr {
     border-radius: 10px;
     float:none;
     margin :0px;
-    margin-bottom: 20px;
-    overflow: scroll;
-    height: 400px;
+    margin-bottom: 10px;
+    height: 500px;
   }
   
   .KanbanBoard:last-child {
     margin-bottom: 0;
+  }
+
+  .KanbanScrollDiv {
+    width: calc(100% - 100px);
+    height: 330px;
+    bottom:20px;
+    padding : 30px;
   }
 }

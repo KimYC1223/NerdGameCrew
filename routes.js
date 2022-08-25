@@ -8,12 +8,14 @@ module.exports = function (app) {
 
 
     var SatisFactoryKanban = require(__dirname+'/Web/SatisFactory/JS/kanban.js')
+    var SatisFactoryMileStone = require(__dirname+'/Web/SatisFactory/JS/MileStone.js')
     app.get('/SatisFactory', (req,res) => {
       res.render(__dirname+'/Web/SatisFactory/HTML/index.ejs',{
         ToDo : SatisFactoryKanban.ToDoList,
         InProgress : SatisFactoryKanban.InProgressList,
         Done : SatisFactoryKanban.DoneList,
         Translation : SatisFactoryKanban.KoreanText,
+        MileStone : SatisFactoryMileStone.MileStoneData,
       })
     })
 
