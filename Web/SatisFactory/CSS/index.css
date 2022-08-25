@@ -193,6 +193,40 @@ hr {
 .InProgressBar { background-color: rgb(13, 110, 224);}
 .DoneBar { background-color: rgb(219, 219, 219);}
 
+.KanbanScrollDoiv {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  -ms-overflow-style: none !important; /* IE and Edge */
+    scrollbar-width: none !important; /* Firefox */
+}
+
+.KanbanScrollDoiv::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera*/
+}
+
+.KanbanBoardWrap{
+  width: 100%;
+  overflow: hidden;
+  height: 800px;
+}
+
+.KanbanBoard {
+  width: calc(33.333% - 4px);
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  float:left;
+  margin-right: 3px;
+  overflow: hidden;
+  height: 100%;
+  padding:20px;
+}
+
+.KanbanBoard:last-child {
+  margin-right: 0;
+}
+
 /* ========================================================================================================= */
 /*  모바일 버전 코드                                                                                             */
 /* ========================================================================================================= */
@@ -203,7 +237,7 @@ hr {
   }
 
   .mainDiv {
-    width:90vw;
+    width:80vw;
     top:15px;
     margin-bottom: 120px;
     border:none;
@@ -254,5 +288,26 @@ hr {
 
   .playInfoSub {
     font-size: 12px;
+  }
+
+  .KanbanBoardWrap{
+    
+    width: 100%;
+    overflow: hidden;
+    height: 1240px;
+  }
+  
+  .KanbanBoard {
+    width: 100%;
+    border-radius: 10px;
+    float:none;
+    margin :0px;
+    margin-bottom: 20px;
+    overflow: scroll;
+    height: 400px;
+  }
+  
+  .KanbanBoard:last-child {
+    margin-bottom: 0;
   }
 }

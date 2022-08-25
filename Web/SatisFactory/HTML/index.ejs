@@ -104,47 +104,51 @@
         <div class="DoneBar" id="DoneBar" style="width : calc(<%= 100 * (Done.length / (ToDo.length + InProgress.length + Done.length)) %>% - 20px)">Done</div>
       </div>
 
-      <div class="TodoBoard">
-        <span class="boardTitle">To Do : 해야 할 업무</span>
-        <% for (var i = 0 ; i <ToDo.length; i++) { %>
-          <% var item = ToDo[i] %>
-          <div class="KanbanItem TodoItem">
-            <span class="KanbanItemPriority"><%= item['priority']%></span>
-            <span class="KanbanItemName"><%= item['name']%></span>
-            <img src="../SatisFactory/IMG/<%= item['type']%>.png" style="width:50px;">
-            <span class="KanbanItemType"><%= item['type']%></span>
-            <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
-            <span class="KanbanItemDesc"><%= item['Description']%></span>
+      <div class="KanbanBoardWrap">
+        <div class="KanbanBoard">
+          <span class="boardTitle">To Do : 해야 할 업무</span>
+          <div class="KanbanScrollDoiv">
+            <% for (var i = 0 ; i <ToDo.length; i++) { %>
+              <% var item = ToDo[i] %>
+              <div class="KanbanItem TodoItem draggable">
+                <img src="../SatisFactory/IMG/<%= item['type']%>.png" style="width:50px;">
+                <span class="KanbanItemPriority"><%= item['priority']%></span>
+                <span class="KanbanItemName"><%= item['name']%></span>
+                <span class="KanbanItemType"><%= item['type']%></span>
+                <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
+                <span class="KanbanItemDesc"><%= item['Description']%></span>
+              </div>
+            <% } %>
           </div>
-        <% } %>
-      </div>
-      <div class="TodoBoard">
-        <span class="boardTitle">In Progress : 진행중인 업무</span>
-        <% for (var i = 0 ; i <InProgress.length; i++) { %>
-          <% var item = InProgress[i] %>
-          <div class="KanbanItem InProgressItem">
-            <span class="KanbanItemPriority"><%= item['priority']%></span>
-            <span class="KanbanItemName"><%= item['name']%></span>
-            <img src="../SatisFactory/IMG/<%= item['type']%>.png" style="width:50px;">
-            <span class="KanbanItemType"><%= item['type']%></span>
-            <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
-            <span class="KanbanItemDesc"><%= item['Description']%></span>
-          </div>
-        <% } %>
-      </div>
-      <div class="TodoBoard">
-        <span class="boardTitle">Done : 완료한 업무</span>
-        <% for (var i = 0 ; i <Done.length; i++) { %>
-          <% var item = Done[i] %>
-          <div class="KanbanItem DoneItem">
-            <span class="KanbanItemPriority"><%= item['priority']%></span>
-            <span class="KanbanItemName"><%= item['name']%></span>
-            <img src="../SatisFactory/IMG/<%= item['type']%>.png" style="width:50px;">
-            <span class="KanbanItemType"><%= item['type']%></span>
-            <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
-            <span class="KanbanItemDesc"><%= item['Description']%></span>
-          </div>
-        <% } %>
+        </div>
+        <div class="KanbanBoard">
+          <span class="boardTitle">In Progress : 진행중인 업무</span>
+          <% for (var i = 0 ; i <InProgress.length; i++) { %>
+            <% var item = InProgress[i] %>
+            <div class="KanbanItem InProgressItem draggable">
+              <img src="../SatisFactory/IMG/<%= item['type']%>.png" style="width:50px;">
+              <span class="KanbanItemPriority"><%= item['priority']%></span>
+              <span class="KanbanItemName"><%= item['name']%></span>
+              <span class="KanbanItemType"><%= item['type']%></span>
+              <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
+              <span class="KanbanItemDesc"><%= item['Description']%></span>
+            </div>
+          <% } %>
+        </div>
+        <div class="KanbanBoard">
+          <span class="boardTitle">Done : 완료한 업무</span>
+          <% for (var i = 0 ; i <Done.length; i++) { %>
+            <% var item = Done[i] %>
+            <div class="KanbanItem DoneItem draggable">
+              <img src="../SatisFactory/IMG/<%= item['type']%>.png" style="width:50px;">
+              <span class="KanbanItemPriority"><%= item['priority']%></span>
+              <span class="KanbanItemName"><%= item['name']%></span>
+              <span class="KanbanItemType"><%= item['type']%></span>
+              <span class="KanbanItemTypeKorean"><%= Translation[item['type']]%></span>
+              <span class="KanbanItemDesc"><%= item['Description']%></span>
+            </div>
+          <% } %>
+        </div>
       </div>
     </div>
 
