@@ -34,7 +34,6 @@
 <body>
 
   <div class="mainDiv">
-
     <div class="titleDiv">
       <div class="titleImageDiv">
         <img class="titleImageBackground" src="../SatisFactory/IMG/BG.png" alt="">
@@ -81,14 +80,14 @@
 
       </table>
     </div>
-
     <hr>
     <!--############################################################################################################################################################################################
     #
     #  워크 플로우
     #  Kanban 스타일의 워크 플로우 작성
     #
-    ############################################################################################################################################################################################-->
+    ###########################################################################################################################################################################################-->
+    
     <div class="subDiv">
       <div class="subDivTitle">
         <span>워크 플로우</span>
@@ -169,8 +168,8 @@
         </div>
       </div>
     </div>
-
     <hr>
+    
 
     <!--############################################################################################################################################################################################
     #
@@ -186,29 +185,53 @@
       </div>
 
       <div class="MileStoneMonitor_Web">
-        <div class="MileStoneSideBar">
-          <div>
-            <div class="MileStoneSiderBarButton MS_Done">Tier 0</div>
-            <div class="MileStoneSiderBarButton MS_Done">Tier 1</div>
-            <div class="MileStoneSiderBarButton MS_Done">Tier 2</div>
-            <div class="MileStoneSiderBarButton MS_InProgress MS_Select">Tier 3</div>
-            <div class="MileStoneSiderBarButton MS_ToDo">Tier 4</div>
-            <div class="MileStoneSiderBarButton MS_ToDo">Tier 5</div>
-            <div class="MileStoneSiderBarButton MS_ToDo">Tier 6</div>
-            <div class="MileStoneSiderBarButton MS_ToDo">Tier 7</div>
-            <div class="MileStoneSiderBarButton MS_ToDo">Tier 8</div>
+        <div class="MileStoneMonitor_WebBorder">
+          <div class="MileStoneSideBar">
+            <div>
+              <div class="MileStoneSiderBarButton MS_Done">Tier 0</div>
+              <div class="MileStoneSiderBarButton MS_Done">Tier 1</div>
+              <div class="MileStoneSiderBarButton MS_Done">Tier 2</div>
+              <div class="MileStoneSiderBarButton MS_Done">Tier 3</div>
+              <div class="MileStoneSiderBarButton MS_InProgress">Tier 4</div>
+              <div class="MileStoneSiderBarButton MS_ToDo">Tier 5</div>
+              <div class="MileStoneSiderBarButton MS_ToDo">Tier 6</div>
+              <div class="MileStoneSiderBarButton MS_ToDo">Tier 7</div>
+              <div class="MileStoneSiderBarButton MS_ToDo">Tier 8</div>
+            </div>
           </div>
-        </div>
-        <div class="MileStoneSideBody">
+          <div class="MileStoneSideBody">
+          
           <% for (var i = 0; i <= 8; i ++ ) { %>
-          <div>
+          <div class = "MileStonePage MS_Hidden">
             <% for (var j = 0; j < MileStone[i].length; j ++ ) { %>
-              <div>
-                <img src = "<%= MileStone[i][j].img%>">
+              <div class = "MileStoneItem MileStoneItem_<%= MileStone[i][j].isDone%>">
+                <div class="MileStoneItemImage">
+                  <img src = "<%= MileStone[i][j].img%>">
+                  <div class="MileStoneItemInfo <%= MileStone[i][j].isDone%>">
+                    <%= MileStone[i][j].isDone == 'MS_Result_true' ? '연구 완료' : MileStone[i][j].isDone == 'MS_Result_false' ? '연구 필요' : MileStone[i][j].isDone == 'MS_Result_NotYet' ? '해금 필요' : '연구 중'%>
+                  </div>
+                </div>
+                <div class="MileStoneItemBody">
+                  <div class="MileStoneItemSub">MILESTONE TIER <%= i %> : PROJECT No . <%= j%></div>
+                  <div class="MileStoneItemName"><%= MileStone[i][j].name%></div>
+                  <div class="MileStoneItemEnglish"><%= MileStone[i][j].english%></div>
+                  <table class="MileStoneItemTable">
+                    <tr><td>아이템</td><td>요구량</td><td>보유량</td><td>달성</td></tr>
+                    <% for( var k = 0 ; k < MileStone[i][j].cost.length; k++) { %>
+                      <tr class = "<%= MileStone[i][j].cost[k].need <=  MileStone[i][j].cost[k].num  ? 'MS_TableDone' : MileStone[i][j].cost[k].num > 0 ? 'MS_TableProcess' : 'MS_TableToDo' %>">
+                        <td><img src="<%= MileStone[i][j].cost[k].url %>" style="width:32px;"><%= MileStone[i][j].cost[k].item %></td>
+                        <td><%= MileStone[i][j].cost[k].need %></td>
+                        <td><%= MileStone[i][j].cost[k].num %></td>
+                        <td class="<%= MileStone[i][j].cost[k].need <=  MileStone[i][j].cost[k].num  ? 'MS_TableCheck' : ''%>"><%= MileStone[i][j].cost[k].need <=  MileStone[i][j].cost[k].num  ? '✔' : '-'%></td>
+                      </tr>
+                    <% } %>
+                  </table>
+                </div>
               </div>
             <% } %>  
           </div>
           <% } %>
+          </div>
         </div>
       </div>
     </div>
@@ -297,5 +320,7 @@
   <div class="footer">
     Presented by <a href="https://KimYC1223.github.io">KimYC1223</a>
   </div>
+
+  <script language="javascript" src="../SatisFactory/JS/index.js"></script>
 </body>
 </html>

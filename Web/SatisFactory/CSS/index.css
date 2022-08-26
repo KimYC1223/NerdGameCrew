@@ -335,6 +335,164 @@ hr {
   font-size: 12px;
 }
 
+.MileStoneMonitor_Web {
+  width: calc(100% - calc(10px * 2));
+  height: calc(450px - calc(10px * 2));
+  padding : 10px;
+  background-color: #2e2e2e;
+  color:white;
+  margin: 25px 0px;
+}
+
+.MileStoneMonitor_WebBorder {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 20px;
+  border: 1px solid white;
+  position: relative;
+}
+
+.MileStoneSiderBarButton{
+  width: calc(100% / 9);
+  height: 50px;
+  cursor:pointer;
+  line-height: 50px;
+  text-align: center;
+  float : left;
+  transition: 0.2s;
+}
+
+.MS_Done { background-color: #094d9b;}
+.MS_Done:hover { background-color: #064286;}
+.MS_InProgress { background-color: #5f5f5f;}
+.MS_InProgress:hover { background-color: #848484;}
+.MS_ToDo { background-color: #2e2e2e; cursor:not-allowed}
+.MS_ToDo:hover { background-color: #373737;}
+.MS_Select { background-color: #ffb039 !important; color:black !important;}
+.MS_Select:hover { background-color: #e1992e !important;  color:black !important;}
+
+.MileStoneSideBody {
+  width: calc(100% - 40px);
+  bottom:20px;
+  height: calc(100% - 100px);
+  margin-top: 20px;
+  position: absolute;
+  overflow-y: auto;
+}
+
+.MileStoneSideBody::-webkit-scrollbar {
+  width: 10px;
+}
+.MileStoneSideBody::-webkit-scrollbar-thumb {
+  background-color: #7e7e7e;
+}
+.MileStoneSideBody::-webkit-scrollbar-track {
+  background-color: #2e2e2e;
+}
+
+.MS_Hidden { display: none;}
+
+
+.MileStoneItem_MS_Result_true { background: linear-gradient(90deg, #2e2e2e, #2e2e2e, #326229, #326229 ); }
+.MileStoneItem_MS_Result_false { background: linear-gradient(90deg, #2e2e2e, #2e2e2e, #622929, #622929 ); }
+.MileStoneItem_MS_Result_NotYet { background: linear-gradient(90deg, #2e2e2e, #2e2e2e, #202020, #202020 ); }
+.MileStoneItem_MS_Result_Process { background: linear-gradient(90deg, #505050, #505050, #1c2f7a, #1c2f7a ); }
+
+.MileStoneItem_MS_Result_NotYet img , .MileStoneItem_MS_Result_false img {filter : grayscale(100%);}
+
+.MileStoneItem { 
+  width: calc(50% - 70px);
+  height: 200px;
+  margin-right: 10px;
+  float: left;
+  overflow: hidden;
+  margin-bottom : 10px;
+  padding : 30px;
+  position: relative;
+  transition: 0.3s;
+  background-position: left;
+  background-size: 300%;
+  border: 1px solid #515151;
+}
+.MileStoneItem_MS_Result_true:hover,  .MileStoneItem_MS_Result_false:hover, .MileStoneItem_MS_Result_NotYet:hover , .MileStoneItem_MS_Result_Process:hover{
+  background-position: right;
+}
+
+.MileStoneItem:nth-child(2n) {
+  margin-right: 0px;
+}
+
+.MileStoneItemImage {
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  left:30;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 15px;
+}
+
+.MileStoneItemImage img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top:50%;
+  left:50%;
+}
+
+
+.MileStoneItemBody {
+  width: calc(100% - 190px);
+  position:absolute;
+  right:0px;
+}
+
+.MileStoneItemSub {
+  font-size: 12px; color:#ababab
+}
+
+.MileStoneItemName {
+  font-size: 24px;
+}
+
+
+.MileStoneItemInfo {
+  padding : 2px 20px;
+  border-radius: 12px;
+  display: block;
+  width: 70px;
+  text-align: center;
+  padding-bottom: 5px;
+  position:absolute;
+  bottom:-50px;
+  transform: translate(-50%);
+  left:50%;
+}
+
+.MS_Result_true { background-color: #428d34;}
+.MS_Result_false { background-color: #a83636;}
+.MS_Result_NotYet { background-color: #747474;}
+.MS_Result_Process { background-color: #374fad;}
+
+.MileStoneItemTable {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.MileStoneItemTable tr:first-child {
+  background-color: rgba(255,255,255,0.1);
+  text-align: center;
+}
+
+.MileStoneItemTable td:first-child {
+  text-align: left;
+}
+
+.MS_TableToDo {color: rgba(255,255,255,0.4)}
+.MS_TableProcess {color:#7e7e7e}
+.MS_TableDone {color:rgba(255,255,255,0.9)}
+.MS_TableCheck {color : rgba(17, 255, 0, 0.9)}
 
 /* ========================================================================================================= */
 /*  모바일 버전 코드                                                                                             */
@@ -424,9 +582,10 @@ hr {
   }
 
   .KanbanScrollDiv {
-    width: calc(100% - 100px);
-    height: 330px;
+    width: calc(100% - 50px);
+    height: 380px;
     bottom:20px;
-    padding : 30px;
+    padding : 5px;
   }
+
 }
