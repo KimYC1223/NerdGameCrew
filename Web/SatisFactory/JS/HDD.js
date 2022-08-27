@@ -59,7 +59,7 @@ module.exports = {
             {
                 item : '단단한 강철 주괴',
                 english : 'Solid Steel Ingot',
-                url : 'SolidSteelIngot.png',
+                img : 'SolidSteelIngot.png',
                 origin_target : '주조소',
                 alter_target : '주조소',
                 origin_cost : [

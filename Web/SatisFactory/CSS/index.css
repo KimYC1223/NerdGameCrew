@@ -130,6 +130,12 @@ hr {
   margin: 20px 0px;
 }
 
+.subDivTitleSub {
+  line-height: 35px;
+  color:grey;
+  margin-top: 10px;
+}
+
 .subDivTitle{
   display: block;
   text-align: left;
@@ -427,7 +433,7 @@ hr {
 
 .MileStoneItem_MS_Result_NotYet img , .MileStoneItem_MS_Result_false img {filter : grayscale(100%);}
 
-.MileStoneItem { 
+.MileStoneItem {
   width: calc(50% - 70px);
   height: 200px;
   margin-right: 10px;
@@ -599,7 +605,7 @@ hr {
     overflow: hidden;
     height: 1520px;
   }
-  
+
   .KanbanBoard {
     width: 100%;
     border-radius: 10px;
@@ -608,7 +614,7 @@ hr {
     margin-bottom: 10px;
     height: 500px;
   }
-  
+
   .KanbanBoard:last-child {
     margin-bottom: 0;
   }

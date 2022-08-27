@@ -218,22 +218,22 @@ module.exports = {
                 'english' : 'Improved Melee Combat',
                 'name' : '근접 전투 능력 향상',
                 'img': '../SatisFactory/IMG/MileStone/T4_1.webp',
-                'isDone' : 'MS_Result_false',
+                'isDone' : 'MS_Result_true',
                 'cost' : [
-                    { item : '회전자', need : 25,  num : 0, url : '' },
-                    { item : '보강된 철 판', need : 50,  num : 0, url : '' },
-                    { item : '전선', need : 1500,  num : 0, url : '' },
-                    { item : '케이블', need : 200,  num : 0, url : '' },
+                    { item : '회전자', need : 25,  num : 25, url : '' },
+                    { item : '보강된 철 판', need : 50,  num : 50, url : '' },
+                    { item : '전선', need : 1500,  num : 1500, url : '' },
+                    { item : '케이블', need : 200,  num : 200, url : '' },
                 ]
             },
             {
                 'english' : 'Hyper Tubes',
                 'name' : '하이퍼 튜브',
                 'img': '../SatisFactory/IMG/MileStone/T4_2.webp',
-                'isDone' : 'MS_Result_Process',
+                'isDone' : 'MS_Result_true',
                 'cost' : [
                     { item : '구리판', need : 300,  num : 300, url : '' },
-                    { item : '강철 파이프', need : 100,  num : 0, url : '' },
+                    { item : '강철 파이프', need : 300,  num : 300, url : '' },
                     { item : '포장된 산업용 빔', need : 50,  num : 50, url : '' },
                 ]
             },
@@ -241,7 +241,7 @@ module.exports = {
                 'english' : 'Logistics Mk.3',
                 'name' : '물류 Mk.3',
                 'img': '../SatisFactory/IMG/MileStone/T4_3.webp',
-                'isDone' : 'MS_Result_false',
+                'isDone' : 'MS_Result_Process',
                 'cost' : [
                     { item : '강철 빔', need : 200,  num : 0, url : '' },
                     { item : '강철 파이프', need : 100,  num : 0, url : '' },
