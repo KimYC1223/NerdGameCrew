@@ -139,6 +139,33 @@ hr {
   line-height: 40px;
 }
 
+.RealBG {
+  width: 1100px;
+  height: calc(1100px * 0.3333);
+  background: url('../IMG/RealBG.png');
+  filter: contrast(150%);
+  background-size: cover;
+  margin-top: 20px;
+  position: relative;
+  color : white;
+}
+
+.RealBGTimeStamp {
+  display: block;
+  font-size: 18px;
+}
+
+.RealBGLocation {
+  display: block;
+  font-size: 12px;
+}
+
+.RealBGDesc {
+  position: absolute;
+  left : 15px;
+  bottom: 15px;
+}
+
 .playInfoSub {
   font-size: 12px;
 }
@@ -366,7 +393,7 @@ hr {
 .MS_Done:hover { background-color: #064286;}
 .MS_InProgress { background-color: #5f5f5f;}
 .MS_InProgress:hover { background-color: #848484;}
-.MS_ToDo { background-color: #2e2e2e; cursor:not-allowed}
+.MS_ToDo { background-color: #2e2e2e; cursor:wait}
 .MS_ToDo:hover { background-color: #373737;}
 .MS_Select { background-color: #ffb039 !important; color:black !important;}
 .MS_Select:hover { background-color: #e1992e !important;  color:black !important;}
@@ -475,7 +502,7 @@ hr {
 .MS_Result_Process { background-color: #374fad;}
 
 .MileStoneItemTable {
-  width: 100%;
+  width: 95%;
   text-align: center;
   margin-top: 15px;
 }
@@ -510,6 +537,11 @@ hr {
     border:none;
   }
 
+  .RealBG {
+    width: calc(80vw);
+    height: calc(calc(80vw) * 0.3333);
+  }
+
   .titleDiv {
     height: 30vw;
   }
@@ -524,7 +556,7 @@ hr {
   }
 
   .MainTitle {
-    font-size: 12px;
+    font-size: 18px;
     background-color: rgba(0,0,0,0.8);
     padding: 5px 15px;
     margin-top: 5px;
@@ -588,4 +620,81 @@ hr {
     padding : 5px;
   }
 
+  .MileStoneMonitor_Web {
+    height: 700px;
+  }
+
+  .MileStoneSiderBarButton{
+    width: calc(100% / 3);
+    height: 35px;
+    line-height: 35px;
+  }
+
+  .MileStoneSideBody {
+    width: calc(100% - 40px);
+    bottom:20px;
+    height: calc(100% - 155px);
+    margin-top: 20px;
+    position: absolute;
+    overflow-y: auto;
+  }
+
+  .MileStoneItem {
+    width: calc(100% - 20px);
+    height: 250px;
+    padding : 5px;
+  }
+
+  .MileStoneItemImage {
+    width: 80px;
+    height: 80px;
+    left:10px;
+  }
+
+  .MileStoneItemImage img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .MileStoneItemInfo {
+    font-size:12px;
+    padding:2px 7px;
+    padding-bottom: 4px;
+    width: 55px;
+    bottom:-15px;
+  }
+
+  .MileStoneItemBody{
+    width: 100%;
+  }
+
+  .MileStoneItemSub {
+    position:absolute;
+    left:100px;
+  }
+
+  .MileStoneItemName {
+    position:absolute;
+    top:20px;
+    left:100px;
+  }
+
+  .MileStoneItemEnglish {
+    position:absolute;
+    top:60px;
+    left:100px;
+  }
+
+  .MileStoneItemTable {
+    position: absolute;
+    width: calc(100% - 20px);
+    top:95px;
+    left:10px;
+  }
+
+  .RealBGDesc {
+    right:10px !important;
+    top:5px !important;
+    text-align: right;
+  }
 }
