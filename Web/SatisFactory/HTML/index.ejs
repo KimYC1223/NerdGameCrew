@@ -11,6 +11,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../SatisFactory/CSS/index.css">
         <link rel="apple-touch-icon" sizes="57x57" href="../SatisFactory/IMG/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="../SatisFactory/IMG/apple-icon-60x60.png">
@@ -25,6 +26,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="../SatisFactory/IMG/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="../SatisFactory/IMG/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="../SatisFactory/IMG/favicon-16x16.png">
+        
         <link rel="manifest" href="../SatisFactory/IMG/manifest.json">
         <meta name="msapplication-TileColor" content="#FFFFFF">
         <meta name="msapplication-TileImage" content="../SatisFactory/IMG/ms-icon-144x144.png">
@@ -252,14 +254,14 @@
     #
     ############################################################################################################################################################################################-->
 
-    <div class="subDiv">
+    <div class="subDiv" id="HDD_Div">
       <div class="subDivTitle">
         <span>대체 제작법</span>
       </div>
       <span class="subDivTitleSub">하드 드라이브 분석으로 얻은 대체 제작법 목록</span>
       <div class="HDD_MainDiv">
         <% for (let HDD_Index = 0; HDD_Index < HDD.length; HDD_Index++) { %>
-          <div class="HDD_Item ">
+          <div class="HDD_Item HDD_Item_Hidden">
             <div class="HDD_ItemImg">
               <img src = "../SatisFactory/IMG/HDD/<%= HDD[HDD_Index].img%>" />
             </div>
@@ -267,8 +269,9 @@
               <div class="HDD_ItemName"><%= HDD[HDD_Index].item %></div>
               <div class="HDD_ItemEnglish"><%= HDD[HDD_Index].english %></div>
               <table class = "HDD_ItemTable">
-                <tr/><td>도구</td><td><%= HDD[HDD_Index].alter_target %></td><td><%= HDD[HDD_Index].origin_target %></td></tr/>
-                <tr/>
+                <tr class="HDD_ItemTableHead"><td></td><td>대체 제작법</td><td>기존 제작법</td></tr>
+                <tr><td>도구</td><td><%= HDD[HDD_Index].alter_target %></td><td><%= HDD[HDD_Index].origin_target %></td></tr>
+                <tr>
                 <td>재료</td><td>
                   <% for(var t = 0; t < HDD[HDD_Index].alter_cost.length; t ++) { %>
                     <div class="HDD_ItemCost"><%= HDD[HDD_Index].alter_cost[t] %></div>
@@ -277,21 +280,30 @@
                   <% for(var t = 0; t < HDD[HDD_Index].origin_cost.length; t ++) { %>
                     <div class="HDD_ItemCost"><%= HDD[HDD_Index].origin_cost[t] %></div>
                   <% } %>
-                </td></tr/>
-                <tr/>
+                </td></tr>
+                <tr>
                   <td>생산량</td>
                   <td><%= HDD[HDD_Index].alter_product %> <span class="HDD_ItemEfficiency <%= HDD[HDD_Index].isGoodEfficiency ? 'efficiency' : 'notEfficiency' %>"><%= HDD[HDD_Index].efficiency %></span></td>
                   <td><%= HDD[HDD_Index].origin_product %> </td>
-                </tr/>
+                </tr>
               </table>
             </div>
+          </div>
+        <% } %>
+
+        <% for (let HDD_Index2 = 0; HDD_Index2 < 3; HDD_Index2++) { %>
+          <div class="HDD_Item2">
+            <table><tr><td>
+              <i class="fa-solid fa-floppy-disk"></i>
+              <span>발견된 하드 드라이브 없음</span>
+            </td></tr></table>
           </div>
         <% } %>
       </div>
 
       <div class="HDD_Page">
         <% for(let page = 0 ; page <= parseInt( (HDD.length-1) / 3); page ++) { %>
-          <div class="pageButton"><%= page + 1%></div>
+          <a href="#HDD_Div"></a><div class="HDD_PageButton"><%= page + 1%></div></a>
         <% } %>
       </div>
     </div>
@@ -304,15 +316,15 @@
     #  월드 지도를 보여준다
     #
     ############################################################################################################################################################################################-->
-    <!--
     <div class="subDiv">
       <div class="subDivTitle">
         <span>지도</span>
       </div>
+      <span class="subDivTitleSub">2022.08.26 PM 10:55</span>
+      <img class="Map_Image" src="../SatisFactory/IMG/Map.png" alt="">
     </div>
 
     <hr>
-    -->
 
     <!--############################################################################################################################################################################################
     #
@@ -320,29 +332,94 @@
     #  새티스 팩토리 연구노트를 작 (아이패드로 작성한 스크린 샷)
     #
     ############################################################################################################################################################################################-->
-    <!--
     <div class="subDiv">
       <div class="subDivTitle">
         <span>연구노트</span>
       </div>
+      <span class="subDivTitleSub">직접 작성한 새티스 팩토리 연구 노트들</span>
+      <table class="NoteTable">
+        <tr>
+          <td width="50px">번호</td>
+          <td>제목</td>
+          <td width="120px">작성자</td>
+          <td width="120px">작성일</td>
+        </tr>
+        <% for(let NoteIndex = 0; NoteIndex < Note.length; NoteIndex++) { %>
+          <tr class="NoteButton">
+            <td><%= NoteIndex+1 %></td>
+            <td class="Note_Title"><%= Note[NoteIndex].title %></td>
+            <td><%= Note[NoteIndex].author %></td>
+            <td><%= Note[NoteIndex].date %></td>
+          </tr>
+          <tr class="NoteImageTR">
+            <td class="NoteImageTD" colspan="4">
+              <div class="NoteImageDiv">
+                <img src="../SatisFactory/IMG/Note/<%= Note[NoteIndex].image%>">
+              </div>
+            </td>
+          </tr>
+        <% } %>
+      </table>
     </div>
-
     <hr>
-    -->
+    
 
     <!--############################################################################################################################################################################################
     #
     #  스크린샷
-    #  스크린샷을 모아둔 장소이다. (4의 배수 추천)
+    #  스크린샷을 모아둔 장소이다. (2의 배수 추천)
     #
     ############################################################################################################################################################################################-->
-    <!--
-    <div class="subDiv">
+    <div class="subDiv" id="ScreenShotDiv">
       <div class="subDivTitle">
         <span>스크린 샷</span>
       </div>
+      <span class="subDivTitleSub">게임 중 촬영한 스크린샷들</span>
+
+      <div class="screenshot_PageButtonWrapper">
+        <% for(var index = 0 ; index < Screenshots.length ; index ++ ) {%>
+          <div class="screenshot_PageButton <%= Screenshots[index].pictures.length > 0 ? 'screenshot_Clickable' : 'screenshot_NoneClickable'%>" style="width:<%= (100 /Screenshots.length)%>%;">
+            <%= Screenshots[index].location%>
+          </div>
+        <% } %>
+      </div>
+
+      <div class="screenshot_MainDiv">
+        <% for(var ScreenShotPageIndex = 0 ; ScreenShotPageIndex < Screenshots.length; ScreenShotPageIndex ++) { %>
+          <div class ="screenshot_Page <%= ScreenShotPageIndex == 0 ? '' : 'MS_Hidden'%>">
+
+            <% for(var ScreenShotIndex = 0 ; ScreenShotIndex < Screenshots[ScreenShotPageIndex].pictures.length; ScreenShotIndex ++) { %>
+              <a href="/SatisFactory/ScreenShot?page=<%=ScreenShotPageIndex%>&location=<%=ScreenShotIndex%>"><div class="screenshot_CardDiv">
+                <img src = "../SatisFactory/IMG/ScreenShot/<%=Screenshots[ScreenShotPageIndex].pictures[ScreenShotIndex].filename%>.png">
+                <span class="screenshot_CardTitle"><%= Screenshots[ScreenShotPageIndex].pictures[ScreenShotIndex].category%></span>
+                <span class="screenshot_SubTitle"><%= Screenshots[ScreenShotPageIndex].pictures[ScreenShotIndex].subtext%></span>
+              </div></a>
+            <% } %>
+    
+            <% for(var ScreenShotIndex = 0 ; ScreenShotIndex < ( 2 - (Screenshots[ScreenShotPageIndex].pictures.length-1) % 3) && Screenshots[ScreenShotPageIndex].pictures.length > 0; ScreenShotIndex ++) { %>
+              <div class="screenshot_CardDiv DesktopShow">
+                <table class="screenshot_NoPicture"> <tr><td>
+                  <i class="fa-solid fa-person-digging"></i>
+                  <span>추가 예정</span>
+                </td></tr> </table>
+              </div>
+            <% } %>
+
+            <% for(var ScreenShotIndex = 0 ; ScreenShotIndex < ( Screenshots[ScreenShotPageIndex].pictures.length % 2) && Screenshots[ScreenShotPageIndex].pictures.length > 0; ScreenShotIndex ++) { %>
+              <div class="screenshot_CardDiv MobileShow">
+                <table class="screenshot_NoPicture"> <tr><td>
+                  <i class="fa-solid fa-person-digging"></i>
+                  <span>추가 예정</span>
+                </td></tr> </table>
+              </div>
+            <% } %>
+
+          </div>
+        <% } %>
+        
+        
+      </div>
     </div>
-    -->
   </div>
 
   <div class="footer">

@@ -1,0 +1,324 @@
+/* ========================================================================================================= */
+/*  기본으로 필요한 CSS 코드들                                                                                    */
+/* ========================================================================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari, Opera*/
+
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+  background-color: #111217;
+}
+
+a{text-decoration: none;}
+a:link {color:#ffffff;}
+a:visited {color:#ffffff}
+a:hover {color:#ffffff}
+a:active {color:#ffffff}
+
+.draggable {
+  -webkit-user-select:text;
+  -moz-user-select:text;
+  -ms-user-select:text;
+  user-select:text
+}
+
+li {
+  -webkit-user-select:text;
+  -moz-user-select:text;
+  -ms-user-select:text;
+  user-select:text
+}
+
+.backButton {
+  position: absolute;
+  font-size: 50px;
+  top:10px;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  right: 25px;
+  color:white;
+  cursor: pointer;
+  text-align: center;
+}
+
+.menuButton {
+  position: absolute;
+  font-size: 50px;
+  top:10px;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  left: 25px;
+  color:white;
+  cursor: pointer;
+  text-align: center;
+  z-index: 13;
+  transition: 0.5s;
+}
+
+/* ========================================================================================================= */
+/*  기본으로 필요한 CSS 코드들                                                                                    */
+/* ========================================================================================================= */
+
+.mainDiv {
+  transform: translate(-50%,-50%);
+  position: absolute;
+  left:50%;
+  top:calc(50% - 20px);
+  width: calc(80vw - 80px);
+  height: 0;
+  cursor:zoom-in;
+  z-index:3;
+  overflow: hidden;
+  animation-name: init;
+  animation-delay: 0.15s;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes init {
+  from { height: 0; } 
+  to {height: calc(45vw + 20px);}
+}
+
+.ImageMotherDiv {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ImageDiv {
+  transition: 0.5s;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+}
+
+.Show {
+  opacity: 1;
+}
+
+.ImageDiv img {
+  width: calc(80vw - 80px);
+  height: calc(45vw - 45px);
+}
+
+.controller_Desktop {
+  z-index: 2;
+  width: calc(100% - 50px);
+  height: 80px;
+  transform: translate(-50%,-50%);
+  left:50%;
+  top:50%;
+  position: absolute;
+  display:block;
+  color:white;
+}
+.controller_Mobile {
+  display: none;
+}
+
+.fa-angle-left, .fa-angle-right {
+  font-size: 45px;
+  width: 80px;
+  height: 80px;
+  display: inline-block !important;
+  line-height: 80px;
+  position: absolute;
+  text-align: center;
+  cursor: pointer;
+  color:#e6e6e6;
+  transition: 0.2s;
+}
+
+.fa-angle-left:hover, .fa-angle-right:hover {
+  font-size: 55px;
+  color:#FFFFFF;
+}
+
+.description {
+  position: absolute;
+  left:20px;
+  bottom:10px;
+  transition: 0.3s;
+}
+
+.category {
+  display: inline-block;
+  font-size: 32px;
+  color:rgb(255, 208, 0);
+}
+
+.subtext {
+  display: inline-block;
+  font-size: 18px;
+  color:white;
+  margin-left: 20px;
+  margin-top: 15px;
+  opacity: 0.8;
+}
+
+.fa-angle-left {left:0px}
+.fa-angle-right {right:0px}
+
+.menuDiv {
+  left:-360px;
+  width: 310px;
+  height: calc(100% - 105px);
+  background-color: rgba(0,0,0,0.95);
+  border-right: 10px solid rgba(17, 18, 23,0.2);
+  position: absolute;
+  z-index: 12;
+  transition: 0.2s !important;
+  top:0;
+  color:white;
+  padding-top: 105px;
+  padding-left: 40px;
+}
+
+.pageName {
+  font-size: 24px;
+  color:#e6b000;
+}
+
+.locationName {
+  margin: 5px 0px 15px 0px;
+  color:#909090;
+}
+
+.photoNum {
+  font-size: 18px;
+}
+
+.menuList {
+  position: absolute;
+  left:40px;
+  top:250px;
+  width: calc(100% - 80px);
+  max-height: calc(100% - 300px);
+  height: auto;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  overflow-x:hidden;
+  overflow-y: auto;
+
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
+
+.Show2 {
+  left:0px;
+}
+
+.Show3 {
+  transform: rotate(360deg);
+}
+
+.menuList::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera*/
+}
+
+.menuButtonList {
+  width: calc(100% - 20px);
+  overflow-x: hidden;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 20px;
+  cursor:pointer;
+  transition: 0.2s;
+}
+
+.pageButton { 
+  background-color: rgba(24, 24, 24, 0.5)
+}
+
+.pageButton:hover {
+  background-color: black;
+}
+
+.locationButton:hover {
+  background-color: rgba(255, 255, 255, 0.1)
+}
+
+.Selected {
+  background-color: rgba(24, 63, 110,0.5) !important;
+}
+
+.Selected:hover {
+  background-color: rgba(24, 63, 110,0.8) !important;
+}
+
+.pageSubDiv {
+  transition: 0.2s !important;
+  overflow: hidden;
+  height: 0px;
+}
+
+.Show4 {
+  height:auto;
+}
+
+.info {
+  color : #e6e6e6;
+  margin-left: 15px;
+}
+
+/* ========================================================================================================= */
+/*  모바일 버전 코드                                                                                             */
+/* ========================================================================================================= */
+@media(max-width:1200px) {
+  .mainDiv {
+    transform: translate(-50%,-50%);
+    width: 100vw;
+    height: 0;
+    z-index:0;
+  }
+  
+  .ImageDiv img {
+    width: 100vw;
+    height: calc(900vw / 16);
+  }
+
+  .controller_Desktop {display: none;}
+  .controller_Mobile {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+    color:#e6b000;
+  }
+
+  .fa-angle-left {left:50px}
+  .fa-angle-right {right:50px}
+
+  .description {
+    display: none;
+  }
+}

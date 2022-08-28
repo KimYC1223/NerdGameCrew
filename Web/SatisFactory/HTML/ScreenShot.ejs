@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta charset="utf-8" />
+        <meta property="og:image" content="http://ngc-valheim.xyz/Web/SatisFactory/IMG/Logo2.jpg">
+        <meta property="og:title" content="영찬의 게임 일지">
+        <meta property="og:description" content="영찬의 게임일지 : 새티스 팩토리">
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../SatisFactory/CSS/ScreenShot.css">
+        <link rel="apple-touch-icon" sizes="57x57" href="../SatisFactory/IMG/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../SatisFactory/IMG/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../SatisFactory/IMG/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../SatisFactory/IMG/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../SatisFactory/IMG/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../SatisFactory/IMG/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../SatisFactory/IMG/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../SatisFactory/IMG/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../SatisFactory/IMG/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="../SatisFactory/IMG/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../SatisFactory/IMG/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../SatisFactory/IMG/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../SatisFactory/IMG/favicon-16x16.png">
+        
+        <link rel="manifest" href="../SatisFactory/IMG/manifest.json">
+        <meta name="msapplication-TileColor" content="#111217">
+        <meta name="msapplication-TileImage" content="../SatisFactory/IMG/ms-icon-144x144.png">
+        <meta name="theme-color" content="#111217">
+        <title>영찬의 게임일지 : 새티스 팩토리</title>
+      </head>
+<body>
+  <div class="mainDiv">
+    <div class="description">
+      <div class="category"><%= Screenshots[Page].pictures[Location].category%> <span class="info" id="info_desktop">1 / <%= Screenshots[Page].pictures[Location].num%></span></div>
+      <div class="subtext"><%= Screenshots[Page].pictures[Location].subtext%></div>
+    </div>
+    <div class="ImageMotherDiv" id="ImageMotherDiv">
+      <% for(var i = 0 ; i < Screenshots[Page].pictures[Location].num ; i++ ) { %>
+        <div class="ImageDiv <%= i == 0 ? 'Show' : ''%>">
+            <img src="../SatisFactory/IMG/ScreenShot/<%= Screenshots[Page].pictures[Location].filename%>(<%= i+1%>).png" alt="">
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="controller_Desktop">
+    <i class="fa-solid fa-angle-left"></i>
+    <i class="fa-solid fa-angle-right"></i>
+  </div>
+
+  <div class="controller_Mobile">
+    <i class="fa-solid fa-angle-left"></i>
+    <span><%= Screenshots[Page].pictures[Location].category%> <span class="info" id="info_mobile">1 / <%= Screenshots[Page].pictures[Location].num%></span></span>
+    <i class="fa-solid fa-angle-right"></i>
+  </div>
+
+  <div class="backButton" id="backButton">
+    <i class="fa-solid fa-xmark"></i>
+  </div>
+
+  <div class="menuButton" id="menuButton">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <div class="menuDiv" id="menuDiv">
+    <div class="pageName"><%= Screenshots[Page].pictures[Location].category %></div>
+    <div class="locationName"><%= Screenshots[Page].pictures[Location].subtext %></div>
+    <div class="photoNum">총 <%= Screenshots[Page].pictures[Location].num %>장의 사진</div>
+    <div class="menuList">
+      <% for(var i = 0 ; i < Screenshots.length ; i++) { %>
+        <div class="pageButton menuButtonList <%= Page == i ? 'Selected' : '' %>">
+          <%= Screenshots[i].location%>
+        </div>
+
+        <div class="pageSubDiv <%= Page == i ? 'Show4' : '' %>">
+          <% for(var j = 0 ; j < Screenshots[i].pictures.length ; j++) { %>
+            <a href="/SatisFactory/ScreenShot?page=<%= i%>&location=<%= j%>"><div class = "locationButton menuButtonList <%= Page == i && Location == j ? 'Selected' : '' %>">
+              <%= Screenshots[i].pictures[j].category%>
+            </div></a>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+  <script language="javascript">
+    let fileName = "<%= Screenshots[Page].pictures[Location].filename %>"
+  </script>
+  <script language="javascript" src="../SatisFactory/JS/ScreenShotEJS.js"></script>
+</body>
+</html>
