@@ -59,8 +59,8 @@ li {
   display: block;
   position: absolute;
   padding:50px;
-  padding-top:0px;
-  top:50px;
+  padding-top:10px;
+  top:120px;
   left:50%;
   transform: translateX(-50%);
   border-radius: 12px;
@@ -879,9 +879,9 @@ hr {
 @media(max-width:1200px) {
   .mainDiv {
     top:20px;
-    padding-top:10px;
+    padding-top:70px;
   }
-
+  
   .mainDiv {
     width:80vw;
     top:15px;

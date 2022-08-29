@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta charset="utf-8" />
-        <meta property="og:image" content="http://ngc-valheim.xyz/Web/Main/IMG/Logo2.jpg">
+        <meta property="og:image" content="http://ngc-valheim.xyz/Web/Main/IMG/Thumbnail.jpg">
         <meta property="og:title" content="머저리 게임 크루 웹서버">
         <meta property="og:description" content="머저리 게임 크루">
         <meta name="viewport" content="width=device-width, initial-scale=0.8">
@@ -11,7 +11,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&family=Pacifico&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../Main/CSS/index.css">
+        <link rel="stylesheet" type="text/css" href="../Main/CSS/NotFound.css">
         <link rel="apple-touch-icon" sizes="57x57" href="../Main/IMG/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="../Main/IMG/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="../Main/IMG/apple-icon-72x72.png">
@@ -43,18 +43,17 @@
     <%-include('./Navi.ejs')%>
 
     <div class="mainDiv">
-        <img src="../Main/IMG/LogoLongClean2.png">
-        <div class="titleDiv">머저리 게임 크루 웹서버</div>
-        <i class="fa-solid fa-person-digging"></i>
-        <span>공사중이에요..ㅠㅜ 다음에 만나요</span>
-        <div class="GoToHome" id="GoToHome">뒤로가기</div>
-        <script language="javascript">
-          let button = document.getElementById('GoToHome')
-          button.addEventListener('click', () => {
-            window.history.back()
-          })
-        </script>
-      </div>
+      <img src="../Main/IMG/LogoLongClean2.png">
+      <i class="fa-solid fa-person-digging anim"></i>
+      <span>공사중이에요..ㅠㅜ 다음에 만나요</span>
+      <div class="GoToHome" id="GoToHome">뒤로가기</div>
+      <script language="javascript">
+        let button = document.getElementById('GoToHome')
+        button.addEventListener('click', () => {
+          window.history.back()
+        })
+      </script>
+    </div>
 
     <div class="footer">
         Presented by <a href="https://KimYC1223.github.io">KimYC1223</a>

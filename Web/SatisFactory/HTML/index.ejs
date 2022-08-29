@@ -31,9 +31,17 @@
         <meta name="msapplication-TileColor" content="#FFFFFF">
         <meta name="msapplication-TileImage" content="../SatisFactory/IMG/ms-icon-144x144.png">
         <meta name="theme-color" content="#FFFFFF">
+
+        <!--########################################################################################################################################
+        # 네비게이션 CSS (배경색에 맞는 CSS로 임포트 할 것)
+        ########################################################################################################################################-->
+        <link href="../Main/CSS/navi.css" rel="stylesheet">
+        <!--####################################################################################################################################-->
+
         <title>영찬의 게임일지 : 새티스 팩토리</title>
       </head>
 <body>
+  <%-include('../../Main/HTML/Navi.ejs')%>
 
   <div class="mainDiv">
     <div class="titleDiv">
@@ -413,7 +421,6 @@
                 </td></tr> </table>
               </div>
             <% } %>
-
           </div>
         <% } %>
         

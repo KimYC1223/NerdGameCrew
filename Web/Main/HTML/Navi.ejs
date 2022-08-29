@@ -1,0 +1,165 @@
+<div class="navi" id="navi">
+    <span class="navi_logo" id="navi_logo"></span>
+  
+    <div class="navi_menu_div">
+      <i class="fa-solid fa-bars" id="navi_menu_Button"></i>
+      <ul class="navi_ul" id="navi_ul">
+        <li id="navi_menu_btn_1">NGC</li>
+        <li id="navi_menu_btn_2">플레이 로그</li>
+        <li id="navi_menu_btn_3">게임 일지</li>
+        <li id="navi_menu_btn_4">개발자 블로그</li>
+      </ul>
+  
+    </div>
+  
+  
+    <div class="navi_menu_child_div_outside navi_hidden2" id="navi_menu_child_div_outside">
+      <div class="navi_menu_child_div navi_hidden navi_menu_count_2" id="navi_menu_child_1">
+        <ul>
+          <li id="Button_1_1">크루원 정보</li>
+          <li id="Button_1_2">유튜브</li>
+        </ul>
+      </div>
+  
+      <div class="navi_menu_child_div navi_hidden navi_menu_count_3" id="navi_menu_child_2">
+        <ul>
+          <li id="Button_2_1">발헤임</li>
+          <li id="Button_2_2">레프트 4 데드 2</li>
+          <li id="Button_2_3">헬다이버즈</li>
+        </ul>
+      </div>
+  
+      <div class="navi_menu_child_div navi_hidden navi_menu_count_5" id="navi_menu_child_3">
+        <ul>
+          <li id="Button_3_1">새티스 팩토리</li>
+          <li id="Button_3_2">팩토리오</li>
+          <li id="Button_3_3">다이슨 스피어 프로그램</li>
+          <li id="Button_3_4">롤러코스터 타이쿤</li>
+          <li id="Button_3_5">보드게임</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="navi_blackShield navi_hidden3" id="navi_blackShield"></div>
+  
+  <script>
+    const menu_btn_1 = document.getElementById('navi_menu_btn_1')
+    const menu_btn_2 = document.getElementById('navi_menu_btn_2')
+    const menu_btn_3 = document.getElementById('navi_menu_btn_3')
+    const menu_btn_4 = document.getElementById('navi_menu_btn_4')
+
+    const child_menu_1 = document.getElementById('navi_menu_child_1')
+    const child_menu_2 = document.getElementById('navi_menu_child_2')
+    const child_menu_3 = document.getElementById('navi_menu_child_3')
+
+    const navi_menu_child_div_outside = document.getElementById('navi_menu_child_div_outside')
+    const navi = document.getElementById('navi')
+    const navi_ul = document.getElementById('navi_ul')
+    const navi_menu_Button = document.getElementById('navi_menu_Button')
+    const navi_blackShield = document.getElementById('navi_blackShield')
+
+    let flag = false
+    let mouseoutFunc = () => {
+        if(!flag) {
+            navi_menu_child_div_outside.classList.add('navi_hidden2')
+            navi_blackShield.classList.add('navi_hidden3')
+            navi_ul.classList.remove('show4UL')
+        }
+    }
+
+    let hideAll = () => {
+        child_menu_1.classList.add('navi_hidden')
+        child_menu_2.classList.add('navi_hidden')
+        child_menu_3.classList.add('navi_hidden')
+    }
+
+
+    navi.addEventListener('mouseover',() => {
+    flag = true
+    })
+
+    navi.addEventListener('mouseout',() => {
+    flag = false
+    setTimeout("mouseoutFunc()",1000)
+    })
+
+    menu_btn_1.addEventListener('mouseover',() => {
+    hideAll();
+    child_menu_1.classList.remove('navi_hidden')
+    navi_menu_child_div_outside.classList.remove('navi_hidden2')
+    })
+
+    menu_btn_2.addEventListener('mouseover',() => {
+    hideAll();
+    child_menu_2.classList.remove('navi_hidden')
+    navi_menu_child_div_outside.classList.remove('navi_hidden2')
+    })
+
+    
+    menu_btn_3.addEventListener('mouseover',() => {
+      hideAll();
+      child_menu_3.classList.remove('navi_hidden')
+      navi_menu_child_div_outside.classList.remove('navi_hidden2')
+    })
+    
+    menu_btn_4.addEventListener('mouseover',() => {
+      navi_menu_child_div_outside.classList.add('navi_hidden2')
+    })
+
+    navi_blackShield.addEventListener('click',() => {
+        hideAll();
+        navi_menu_child_div_outside.classList.add('navi_hidden2')
+        navi_blackShield.classList.add('navi_hidden3')
+        navi_ul.classList.remove('show4UL')
+    })
+
+    navi_menu_child_div_outside.addEventListener('click',() => {
+        hideAll();
+        navi_menu_child_div_outside.classList.add('navi_hidden2')
+        navi_blackShield.classList.add('navi_hidden3')
+        navi_ul.classList.remove('show4UL')
+    })
+
+    navi_menu_Button.addEventListener('click', ()=> {
+        if(navi_blackShield.classList.contains('navi_hidden3')) {
+            navi_blackShield.classList.remove('navi_hidden3')
+            navi_ul.classList.add('show4UL')
+        } else {
+            navi_blackShield.classList.add('navi_hidden3')
+            hideAll();
+            navi_ul.classList.remove('show4UL')
+        }
+    })
+
+    //*====================================================================*//
+    //* Button URL 관리
+    //*====================================================================*//
+    let navi_logo  = document.getElementById('navi_logo')
+    let button_1_1 = document.getElementById('Button_1_1')
+    let button_1_2 = document.getElementById('Button_1_2')
+    let button_2_1 = document.getElementById('Button_2_1')
+    let button_2_2 = document.getElementById('Button_2_2')
+    let button_2_3 = document.getElementById('Button_2_3')
+    let button_3_1 = document.getElementById('Button_3_1')
+    let button_3_2 = document.getElementById('Button_3_2')
+    let button_3_3 = document.getElementById('Button_3_3')
+    let button_3_4 = document.getElementById('Button_3_4')
+    let button_3_5 = document.getElementById('Button_3_5')
+    let button_4   = document.getElementById('navi_menu_btn_4')
+
+    navi_logo.addEventListener('click',() => {location.href = '/'})
+    button_1_1.addEventListener('click',() => {location.href = '/Crew'})
+    button_1_2.addEventListener('click',() => {location.href = '/Youtube'})
+    button_2_1.addEventListener('click',() => {location.href = '/Valheim'})
+    button_2_2.addEventListener('click',() => {location.href = '/L4D2'})
+    button_2_3.addEventListener('click',() => {location.href = '/HellDivers'})
+    button_3_1.addEventListener('click',() => {location.href = '/SatisFactory'})
+    button_3_2.addEventListener('click',() => {location.href = '/Factorio'})
+    button_3_3.addEventListener('click',() => {location.href = '/DSP'})
+    button_3_4.addEventListener('click',() => {location.href = '/RCT'})
+    button_3_5.addEventListener('click',() => {location.href = '/BoardGame'})
+    button_4.addEventListener('click',() => {location.href = 'http://KimYC1223.github.io'})
+    //*====================================================================*//
+
+
+  </script>

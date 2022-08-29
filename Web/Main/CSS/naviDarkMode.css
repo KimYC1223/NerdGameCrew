@@ -1,0 +1,39 @@
+.navi {
+  border-bottom: 1px solid rgb(0, 0, 0);
+  background-color: #0a0a0a;
+}
+
+.navi_logo {
+  /* 로고 */
+  background-image: url('../IMG/LogoLongClean.png');
+}
+
+.navi_menu_div i {
+  color: #ff8400 !important;
+}
+
+.navi_menu_div li {
+  background-color: rgb(10, 10, 10);
+}
+
+.navi_menu_div li:hover {
+  background-color: rgb(41, 41, 41);
+}
+
+.navi_menu_child_div li:hover{
+  background-color: #c56900;
+}
+
+@media(max-width:768px) {
+  .navi_menu_div li {
+    background-color: rgb(41, 41, 41);
+  }
+  
+  .navi_menu_div li:hover {
+    background-color: #3c3c3c;
+  }
+
+  .navi_menu_div i {
+    color:#c56900;
+  }
+}
