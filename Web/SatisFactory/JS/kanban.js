@@ -24,12 +24,6 @@ module.exports = {
   },
   ToDoList : [
     {
-      'name' : '수정 발진기 라인 제작',
-      'priority' : 'normal',
-      'type' : 'Assembler',
-      'Description' : '석영 -> 석영 크리스탈 -> 수정 발진기 테크 해금 '
-    },
-    {
       'name' : '이산화규소 생산 라인 건설',
       'priority' : 'normal',
       'type' : 'Assembler',
@@ -114,6 +108,18 @@ module.exports = {
       'priority' : 'high',
       'type' : 'Rebuild',
       'Description' : '보강된 철판 생산 라인 재정비, 분당 8개 생산'
+    },
+    {
+      'name' : '수정 발진기 라인 제작',
+      'priority' : 'low',
+      'type' : 'Assembler',
+      'Description' : '석영 -> 석영 크리스탈 -> 수정 발진기 테크 해금 '
+    },
+    {
+      'name' : '수정 발진기 라인 제작',
+      'priority' : 'normal',
+      'type' : 'Mining',
+      'Description' : '석영 크리스탈 + 케이블 + 보강된 철판 합쳐져서 만들어지는 터미널 제작 '
     },
     {
       'name' : '마일스톤 티어 4 클리어',
