@@ -1,6 +1,23 @@
 module.exports = {
     HDD : [
-        
+        {
+            item : '구리 합금 주괴',
+            english : 'Copper Alloy Ingot',
+            img : 'CopperAlloyIngot.png',
+            origin_target : '제련기',
+            alter_target : '주조소',
+            origin_cost : [
+                '구리 광석 30개',
+            ],
+            alter_cost : [
+                '구리 광석 50개',
+                '철 광석 25개'
+            ],
+            origin_product : 30,
+            alter_product : 100,
+            efficiency : '+233.33%',
+            isGoodEfficiency : true,
+        },
         {
             item : '순수한 카테리움 주괴',
             english : 'Pure Caterium Ingot',
@@ -43,7 +60,7 @@ module.exports = {
             english : 'Pure Quartz Crystal',
             img : 'PureQuartzCrystal.png',
             origin_target : '제작기',
-            alter_target : '제작기',
+            alter_target : '정제소',
             origin_cost : [
                 '석영 원석 37.5개',
             ],

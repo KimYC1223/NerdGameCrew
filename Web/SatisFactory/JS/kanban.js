@@ -105,13 +105,13 @@ module.exports = {
   InProgressList : [
     {
       'name' : '모듈식 골조 생산 라인 리모델링',
-      'priority' : 'high',
+      'priority' : 'normal',
       'type' : 'Assembler',
       'Description' : '시멘트 생산 라인 재정비, 분당 20개 생산'
     },
     {
       'name' : '시멘트 라인 리모델링',
-      'priority' : 'high',
+      'priority' : 'normal',
       'type' : 'Rebuild',
       'Description' : '시멘트 생산 라인 재정비, 분당 20개 생산'
     },
@@ -129,6 +129,12 @@ module.exports = {
     },
   ],
   DoneList : [
+    {
+      'name' : '철근 파편 생산 라인 구축',
+      'priority' : 'normal',
+      'type' : 'Assembler',
+      'Description' : '보강된 철판 생산 라인 재정비, 분당 8개 생산'
+    },
     {
       'name' : '보강된 철판 라인 리모델링',
       'priority' : 'high',

@@ -48,6 +48,12 @@ module.exports = {
                     'filename' : 'WaterFallBridge',
                     'num' : 6
                 },
+                {
+                    'category' : '보강된 철판 생산 공장',
+                    'subtext' : '총 4층 높이의 보강된 철판 공장',
+                    'filename' : 'ReinforcedPlateFactory_1',
+                    'num' : 7
+                },
             ]
         },
 
