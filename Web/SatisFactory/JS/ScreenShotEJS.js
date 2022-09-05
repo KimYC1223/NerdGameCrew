@@ -17,7 +17,6 @@ let ChangeImage = (newIndex) => {
     infoM.innerHTML = (CurrentIndex+1) + ' / ' + images.length
     infoD.innerHTML = (CurrentIndex+1) + ' / ' + images.length
     images[CurrentIndex].classList.add('Show')
-    console.log('gg')
 }
 
 let getParam = (sname) => {
