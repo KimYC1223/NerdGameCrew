@@ -206,7 +206,7 @@ module.exports = {
                 'english' : 'Advanced Steel Production',
                 'name' : '고급 철강 생산',
                 'img': '../SatisFactory/IMG/MileStone/T4_0.webp',
-                'isDone' : 'MS_Result_false',
+                'isDone' : 'MS_Result_true',
                 'cost' : [
                     { item : '강철 파이프', need : 200,  num : 200, url : '' },
                     { item : '회전자', need : 200,  num : 200, url : '' },
@@ -241,7 +241,7 @@ module.exports = {
                 'english' : 'Logistics Mk.3',
                 'name' : '물류 Mk.3',
                 'img': '../SatisFactory/IMG/MileStone/T4_3.webp',
-                'isDone' : 'MS_Result_Process',
+                'isDone' : 'MS_Result_true',
                 'cost' : [
                     { item : '강철 빔', need : 200,  num : 200, url : '' },
                     { item : '강철 파이프', need : 100,  num : 100, url : '' },
