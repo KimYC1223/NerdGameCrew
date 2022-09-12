@@ -1,6 +1,44 @@
 module.exports = {
     HDD : [
         {
+            item : '강철 회전자',
+            english : 'Steel Rotor',
+            img : 'SteelRotor.png',
+            origin_target : '조립기',
+            alter_target : '조립기',
+            origin_cost : [
+                '철봉 20개',
+                '나사 100개',
+            ],
+            alter_cost : [
+                '강철 파이프 10개',
+                '전선 30개'
+            ],
+            origin_product : 5,
+            alter_product : 4,
+            efficiency : '+25%',
+            isGoodEfficiency : true,
+        },
+        {
+            item : '포장된 산업용 파이프',
+            english : 'Encased Industrial Pipe',
+            img : 'EncasedIndustrialPipe.png',
+            origin_target : '조립기',
+            alter_target : '조립기',
+            origin_cost : [
+                '강철 빔 24개',
+                '콘크리트 30개',
+            ],
+            alter_cost : [
+                '강철 파이프 28개',
+                '콘크리트 20개'
+            ],
+            origin_product : 4,
+            alter_product : 6,
+            efficiency : '-33.33%',
+            isGoodEfficiency : false,
+        },
+        {
             item : '구리 합금 주괴',
             english : 'Copper Alloy Ingot',
             img : 'CopperAlloyIngot.png',

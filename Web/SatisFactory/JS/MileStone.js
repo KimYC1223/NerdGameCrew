@@ -208,10 +208,10 @@ module.exports = {
                 'img': '../SatisFactory/IMG/MileStone/T4_0.webp',
                 'isDone' : 'MS_Result_false',
                 'cost' : [
-                    { item : '강철 파이프', need : 200,  num : 0, url : '' },
-                    { item : '회전자', need : 200,  num : 0, url : '' },
-                    { item : '전선', need : 1500,  num : 0, url : '' },
-                    { item : '콘크리트', need : 300,  num : 0, url : '' },
+                    { item : '강철 파이프', need : 200,  num : 200, url : '' },
+                    { item : '회전자', need : 200,  num : 200, url : '' },
+                    { item : '전선', need : 1500,  num : 1500, url : '' },
+                    { item : '콘크리트', need : 300,  num : 300, url : '' },
                 ]
             },
             {
@@ -243,9 +243,9 @@ module.exports = {
                 'img': '../SatisFactory/IMG/MileStone/T4_3.webp',
                 'isDone' : 'MS_Result_Process',
                 'cost' : [
-                    { item : '강철 빔', need : 200,  num : 0, url : '' },
-                    { item : '강철 파이프', need : 100,  num : 0, url : '' },
-                    { item : '콘크리트', need : 500,  num : 0, url : '' },
+                    { item : '강철 빔', need : 200,  num : 200, url : '' },
+                    { item : '강철 파이프', need : 100,  num : 100, url : '' },
+                    { item : '콘크리트', need : 500,  num : 500, url : '' },
                 ]
             },
         ],

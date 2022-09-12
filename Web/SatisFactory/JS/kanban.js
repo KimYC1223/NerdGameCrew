@@ -30,28 +30,10 @@ module.exports = {
       'Description' : '석영 -> 석영 크리스탈 -> 수정 발진기 테크 해금 '
     },
     {
-      'name' : '이산화규소 생산 라인 건설',
-      'priority' : 'normal',
-      'type' : 'Assembler',
-      'Description' : '베이스 캠프에 이산화 규소 생산 라인 건설 '
-    },
-    {
       'name' : '우주 엘레베이터 플랫폼 재구축',
       'priority' : 'normal',
       'type' : 'Rebuild',
       'Description' : '우주 엘레베이터에 필요한 재료들의 터미널 시스템 구축'
-    },
-    {
-      'name' : '강철 생산 라인 건설',
-      'priority' : 'normal',
-      'type' : 'Foundry',
-      'Description' : '제 1 석탄 발전 단지 근처에 석탄을 이용한 강철 생산 라인 구축'
-    },
-    {
-      'name' : '강철 물류 시스템 구축',
-      'priority' : 'high',
-      'type' : 'LongDistanceLogistics',
-      'Description' : '강철을 다른 제작 / 연구단지에 수출 할 수 있는 장거리 물류 시스템 구축'
     },
     {
       'name' : '제 1 하이퍼튜브 터미널 건설',
@@ -104,6 +86,38 @@ module.exports = {
   ],
   InProgressList : [
     {
+      'name' : '강철 생산 라인 건설',
+      'priority' : 'normal',
+      'type' : 'Foundry',
+      'Description' : '제 1 석탄 발전 단지 근처에 석탄을 이용한 강철 생산 라인 구축'
+    },
+    {
+      'name' : '강철 물류 시스템 구축',
+      'priority' : 'high',
+      'type' : 'LongDistanceLogistics',
+      'Description' : '강철을 다른 제작 / 연구단지에 수출 할 수 있는 장거리 물류 시스템 구축'
+    },
+    {
+      'name' : '어셈블리:프레임워크 해금',
+      'priority' : 'low',
+      'type' : 'Assembly',
+      'Description' : '우주 엘레베이터 2단계 해금'
+    },
+  ],
+  DoneList : [
+    {
+      'name' : '황 채굴장 건설',
+      'priority' : 'normal',
+      'type' : 'Mining',
+      'Description' : '시작 지점 근처의 황 채굴장 건설 : 생산량 240개/분'
+    },
+    {
+      'name' : '이산화규소 생산 라인 건설',
+      'priority' : 'normal',
+      'type' : 'Assembler',
+      'Description' : '베이스 캠프에 이산화 규소 생산 라인 건설 '
+    },
+    {
       'name' : '모듈식 골조 생산 라인 리모델링',
       'priority' : 'normal',
       'type' : 'Assembler',
@@ -121,14 +135,6 @@ module.exports = {
       'type' : 'Milestone',
       'Description' : '고급 철강 생산, 근접 전투 능력 향상, 하이퍼 튜브, 물류 Mk.3 해금'
     },
-    {
-      'name' : '어셈블리:프레임워크 해금',
-      'priority' : 'low',
-      'type' : 'Assembly',
-      'Description' : '우주 엘레베이터 2단계 해금'
-    },
-  ],
-  DoneList : [
     {
       'name' : '철근 파편 생산 라인 구축',
       'priority' : 'normal',
