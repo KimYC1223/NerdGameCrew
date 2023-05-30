@@ -86,9 +86,14 @@
     background-color: rgb(16, 51, 84);
   }
   
+  .navi_menu_count_8 li { width:calc(100% / 8);}
+  .navi_menu_count_7 li { width:calc(100% / 7);}
+  .navi_menu_count_6 li { width:calc(100% / 6);}
   .navi_menu_count_5 li { width:calc(100% / 5);}
+  .navi_menu_count_4 li { width:calc(100% / 4);}
   .navi_menu_count_3 li { width:calc(100% / 3);}
   .navi_menu_count_2 li { width:calc(100% / 2);}
+  .navi_menu_count_1 li { width:calc(100% / 1);}
   
   .navi_hidden {
     display: none;

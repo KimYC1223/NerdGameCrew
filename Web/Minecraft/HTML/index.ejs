@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app="ngc_minecraft">
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta property="og:image" content="http://nerdgamecrew.link/Minecraft/IMG/Logo2.jpg">
+  <meta property="og:title" content="머저리 게임크루 Minecraft 웹서버">
+  <meta property="og:description" content="NGC용 Minecraft 공식 웹서버">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../Minecraft/CSS/index.css">
+  <link rel="stylesheet" type="text/css" href="../Minecraft/CSS/minecraftFont.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="../Minecraft/IMG/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../Minecraft/IMG/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../Minecraft/IMG/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../Minecraft/IMG/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../Minecraft/IMG/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../Minecraft/IMG/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../Minecraft/IMG/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../Minecraft/IMG/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../Minecraft/IMG/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../Minecraft/IMG/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../Minecraft/IMG/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../Minecraft/IMG/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../Minecraft/IMG/favicon-16x16.png">
+  <link rel="manifest" href="../Minecraft/IMG/manifest.json">
+  <meta name="msapplication-TileColor" content="#0a0a0a">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta name="msapplication-TileImage" content="../Minecraft/IMG/ms-icon-144x144.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
+  <meta name="theme-color" content="#0a0a0a">
+  <!--########################################################################################################################################
+  # 네비게이션 CSS (배경색에 맞는 CSS로 임포트 할 것)
+  ########################################################################################################################################-->
+  <link href="../Main/CSS/navi.css" rel="stylesheet">
+  <link href="../Main/CSS/naviDarkMode.css" rel="stylesheet">
+  <!--####################################################################################################################################-->
+
+  <title>머저리 게임크루 : 마인크래프트 온라인 서버</title>
+</head>
+<body ng-controller="ngc_controller" bgcolor="#111217">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js" integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <%-include('../../Main/HTML/Navi.ejs')%>
+
+  <div class="mainDiv">
+    <img src="../Minecraft/IMG/Logo.png" alt="" class="logo_img">
+
+    <div class="subDib">
+      <span class="titleHeader">🌏 머저리 게임 크루 서버</span>
+      <div class="server_status_table_div draggable">
+        <table>
+          <tr>
+            <td class="server_status_icon_td">
+              <% if (server_status == null) { %>
+                <img src="../Minecraft/IMG/ServerIcon_OffLine.png" width="100%">
+              <% } else { %>
+                <img src="../Minecraft/IMG/ServerIcon_OnLine.png" width="100%">
+              <% } %>
+            </td>
+            <td class="server_status_td minefont">
+              <table width="100%" class="server_title">
+                <tr>
+                  <td class="server_name">
+                    NGC Server
+                  </td>
+                  <td class="server_player_num">
+                    <% if (server_status == null) { %>
+                      <span>0/20</span>
+                      <img class="server_status_icon" src="../Minecraft/IMG/ServerStatus_OffLine.png">
+                    <% } else { %>
+                      <span><%= server_status.onlinePlayers%>/20</span>
+                      <img class="server_status_icon" src="../Minecraft/IMG/ServerStatus_OnLine.png">
+                    <% } %>
+                  </td>
+                </tr>
+              </table>
+              
+              <% if (server_status == null) { %>
+                <span class="minefont">NGC Mincraft server is offline.</span>
+              <% } else { %>
+                <span class="minefont">Nerd Game Crew Minecraft AWS server</span>
+              <% } %>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="server_detail_table">
+        <% if (server_status == null) { %>
+          <div class="server_detail_table_offline">
+            서버가 오프라인 상태입니다.
+          </div>
+        <% } else { %>
+          <table class="server_detail_table_online_garo minefont draggable">
+            <tr class="server_detail_table_header">
+              <td class="minefont">Version</td>
+              <td class="minefont">Bukkit</td>
+              <td class="minefont">UpTime</td>
+              <td class="minefont">Server CPU</td>
+              <td class="minefont">Max Memory</td>
+              <td class="minefont">Free Memory</td>
+            </tr>
+            <tr>
+              <td class="minefont"><%= server_status.bukkitVersion.split('-')[0] %></td>
+              <td class="minefont"><%= server_status.name %></td>
+              <td class="minefont"><%= uptime %></td>
+              <td class="minefont"><%= server_status.health.cpus %> Core</td>
+              <td class="minefont"><%= max_memory %></td>
+              <td class="minefont"><%= free_memory %></td>
+            </tr>
+          </table>
+          <table class="server_detail_table_online_sero minefont draggable">
+            <tr>
+              <td class="minefont server_detail_table_header">Version</td>
+              <td class="minefont"><%= server_status.bukkitVersion.split('-')[0] %></td>
+            </tr>
+            <tr>
+              <td class="minefont server_detail_table_header">Bukkit</td>
+              <td class="minefont"><%= server_status.name %></td>
+            </tr>
+            <tr>
+              <td class="minefont server_detail_table_header">UpTime</td>
+              <td class="minefont"><%= uptime %></td></tr>
+            <tr>
+              <td class="minefont server_detail_table_header">Server CPU</td>
+              <td class="minefont"><%= server_status.health.cpus %> Core</td></tr>
+            <tr>
+              <td class="minefont server_detail_table_header">Max Memory</td>
+              <td class="minefont"><%= max_memory %></td>
+            </tr>
+            <tr>
+              <td class="minefont server_detail_table_header">Free Memory</td>
+              <td class="minefont"><%= free_memory %></td>
+            </tr>
+          </table>
+        <% } %>
+        </div>
+    </div>
+
+    <div class="subDib">
+      <span class="titleHeader" id="crew_info">크루원 정보</span>
+      <% for(var index = 0; index < total_players.length; index ++) { %>
+      <table class="profile_table draggable">
+        <tr>
+          <td class="profile_table_icon_td" valign="top">
+            <img src="../Minecraft/IMG/<%= total_players[index]%>.png" class="profile_icon {{player_info['<%=  total_players[index]%>'].isLoggin?'online_profile_icon':'offline_profile_icon'}}">
+          </td>
+          <td>
+            <span class="profile_username minefont"><%= total_players[index]%> 
+              <span class="{{player_info['<%=  total_players[index]%>'].isLoggin?'online_labbel':'offline_labbel'}}">{{player_info['<%=  total_players[index]%>'].isLoggin?'ONLINE':'OFFLINE'}}
+              </span></span>
+            <span class="profile_health_bar">
+              <% for(var i = 0; i < 10; i ++) {%> 
+                <img src="../Minecraft/IMG/health_0.png" class="health_icon <%= total_players[index]%>_health_bar">
+              <%}%>
+            </span>
+            <span class="profile_hunger_bar">
+              <% for(var i = 0; i < 10; i ++) {%> 
+                <img src="../Minecraft/IMG/hunger_0.png" class="hunger_icon <%= total_players[index]%>_hunger_bar">
+              <%}%>
+            </span>
+            <div class="login_panel" ng-show="player_info['<%=  total_players[index]%>'].isLoggin">
+              Position : <span class="location_data">({{player_info['<%=  total_players[index]%>'].location_x.toFixed(0)}}, {{player_info['<%=  total_players[index]%>'].location_y.toFixed(0)}} )</span>
+              PlayTime : <span class="location_data">{{player_info['<%=  total_players[index]%>'].lastLogin}}</span>
+              <div class="connect_button" ng-hide="player_info['<%=  total_players[index]%>'].isConnect" ng-click="connect('<%= total_players[index]%>')">Connect</div>
+              <div class="disconnect_button" ng-show="player_info['<%=  total_players[index]%>'].isConnect" ng-click="disconnect()">Disconnect</div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <% } %>
+    </div>
+
+    <div class="subDib">
+      <span class="titleHeader">웨이포인트 시스템</span>
+      <a href="#crew_info">크루원 정보</a>에서 연결한 캐릭터가 웨이포인트 위에 위치해 있을 경우, 다른 웨이포인트로 순간이동 할 수 있습니다.
+      <table class="waypoint_garo" height="400px">
+        <tr>
+          <td width="400px" valign="top" ng-hide="waypoint_select != null">
+            <img src="../Minecraft/IMG/waypoint.png" width="300px">
+            <span class="waypoint_name">way point</span>
+            <span class="waypoint_description">목적지를 선택해주세요.</span>
+            <div class="waypoint_disableButton">목적지로 이동</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    Presented by <a href="https://KimYC1223.github.io">KimYC1223</a>
+  </div>
+  <script src="../Minecraft/JS/MinecraftAngular.js"></script>
+</body>
+</html>
