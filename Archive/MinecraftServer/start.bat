@@ -70,7 +70,7 @@ echo │
 echo │ * 참고사항 : 서버종료는 stop입니다!!
 echo │
 echo ┕───────────────────────────────
-java -Xms1G -Xmx1G -jar craftbukkit-1.19.4.jar
+"c:/Program Files/Java/jdk-18.0.2.1/bin/java.exe" -Xms1G -Xmx1G -jar craftbukkit-1.19.4.jar
 pause
 
 cls
@@ -89,7 +89,7 @@ echo │
 echo │ * 참고사항 : 서버종료는 stop입니다!!
 echo │
 echo ┕───────────────────────────────
-java -Xms1G -Xmx2G -jar craftbukkit-1.19.4.jar
+"c:/Program Files/Java/jdk-18.0.2.1/bin/java.exe" -Xms1G -Xmx2G -jar craftbukkit-1.19.4.jar
 pause
 
 cls
@@ -108,7 +108,7 @@ echo │
 echo │ * 참고사항 : 서버종료는 stop입니다!!
 echo │
 echo ┕───────────────────────────────
-java -Xms1G -Xmx4G -jar craftbukkit-1.19.4.jar
+"c:/Program Files/Java/jdk-18.0.2.1/bin/java.exe" -Xms1G -Xmx4G -jar craftbukkit-1.19.4.jar
 pause
 
 cls
@@ -127,7 +127,7 @@ echo │
 echo │ * 참고사항 : 서버종료는 stop입니다!!
 echo │
 echo ┕───────────────────────────────
-java -Xms2G -Xmx8G -jar craftbukkit-1.19.4.jar
+"c:/Program Files/Java/jdk-18.0.2.1/bin/java.exe" -Xms2G -Xmx8G -jar craftbukkit-1.19.4.jar
 pause
 
 :ddd
