@@ -52,7 +52,7 @@ module.exports = function (app) {
     //===================================================================================================================================
     //    마인크래프트 인증 관련
     //===================================================================================================================================
-    let minecraftAuthCode = {'KIMYC1223':'changeme', 'KIMWUPWUP':'changeme', 'sogogii':'changeme', 'Namzi_':'changeme'}
+    let minecraftAuthCode = {'KIMYC1223':'8504', 'KIMWUPWUP':'1640', 'sogogii':'6881', 'Namzi_':'5440'}
     app.get('/MinecraftAuthCheck', (req,res) => { 
       var user_id = req.param('username');
       var code = req.param('code');

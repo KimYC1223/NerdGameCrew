@@ -7,7 +7,6 @@
 
 body::-webkit-scrollbar {
     display: none !important; /* Chrome, Safari, Opera*/
-
 }
 
 body {
@@ -273,6 +272,95 @@ li {
   margin-top: 20px;
 }
 
+.waypoint_select {
+  width: 300px;
+}
+
+.waypoint_garo .scrollDiv{
+  margin-left: 20px;
+}
+
+.scrollDiv {
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+}
+
+.scrollDiv::-webkit-scrollbar { width:8px; }
+.scrollDiv::-webkit-scrollbar-thumb { background-color:#3b3b3b; }
+.scrollDiv::-webkit-scrollbar-track { background-color:#111217; }
+
+.waypointList {
+  border-spacing: 5px;
+}
+
+.waypoint_item{
+  padding: 10px 20px;
+  border: 1px solid rgb(95, 95, 95);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.waypoint_item:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+.waypointList_name {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.waypointList_description {
+  color:gray
+}
+
+.location_table {
+  width: 100%;
+  border: 1px solid rgb(95, 95, 95);
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.waypoint_description {
+  margin: 8px 0px 15px 0px;
+  display: block;
+}
+
+.location_table td {
+  border : 1px solid rgb(95, 95, 95);
+  padding: 2px 10px;
+}
+
+.location_table td:first-child {
+  width: 60px
+}
+
+.waypoint_name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.waypoint_button, .waypoint_disableButton, .refreshButton {
+  background-color: #3b3b3b;
+  transition: 0.3s;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 6px;
+  display: block;
+  text-align: center;
+}
+
+.waypoint_disableButton:hover {background-color: #202020;}
+.waypoint_button {background-color: #1358a7;}
+.waypoint_button:hover {background-color: #246dc0;}
+.refreshButton { background-color: #1358a7; margin-top: 10px;}
+.refreshButton:hover { background-color: #246dc0; }
+
+.waypoint_garo { display: table; }
+.waypoint_sero { display: none;}
+
 @media(max-width:1200px) {
   .mainDiv {
     width:320px;
@@ -353,5 +441,20 @@ li {
 
   .online_labbel, .offline_labbel {
     line-height: 24px;
+  }
+
+  .waypoint_sero { display: table; }
+  .waypoint_garo { display: none;}
+  .waypoint_select {
+    width: 100%;
+  }
+
+  .scrollDiv {
+    margin-top: 20px;
+    height: 500px;
+  }
+
+  .sero_waypoint_select {
+    padding-left: 10px;
   }
 }

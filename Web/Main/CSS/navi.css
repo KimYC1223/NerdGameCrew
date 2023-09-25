@@ -170,19 +170,19 @@
         margin-top: 0px;
     }
 
-    .navi_menu_count_5 li, .navi_menu_count_3 li, .navi_menu_count_2 li { 
+    .navi_menu_count_1 li, .navi_menu_count_2 li, .navi_menu_count_3 li, .navi_menu_count_4 li,
+    .navi_menu_count_5 li, .navi_menu_count_6 li, .navi_menu_count_7 li, .navi_menu_count_8 li  { 
       width:100%;
       height: 60px;
     }
 
-    .navi_menu_count_2 {
-        height: calc(60px * 2);
-    }
-    .navi_menu_count_3 {
-        height: calc(60px * 3);
-    }
-    .navi_menu_count_5 {
-        height: calc(60px * 5);
-    }
+    .navi_menu_count_1 { height: calc(60px * 1);}
+    .navi_menu_count_2 { height: calc(60px * 2);}
+    .navi_menu_count_3 { height: calc(60px * 3);}
+    .navi_menu_count_4 { height: calc(60px * 4);}
+    .navi_menu_count_5 { height: calc(60px * 5);}
+    .navi_menu_count_6 { height: calc(60px * 6);}
+    .navi_menu_count_7 { height: calc(60px * 7);}
+    .navi_menu_count_8 { height: calc(60px * 8);}
   
   }

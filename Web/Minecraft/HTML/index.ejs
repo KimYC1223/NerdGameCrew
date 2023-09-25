@@ -38,6 +38,7 @@
   ########################################################################################################################################-->
   <link href="../Main/CSS/navi.css" rel="stylesheet">
   <link href="../Main/CSS/naviDarkMode.css" rel="stylesheet">
+  <link href="../Main/CSS/naviDarkMode2.css" rel="stylesheet">
   <!--####################################################################################################################################-->
 
   <title>머저리 게임크루 : 마인크래프트 온라인 서버</title>
@@ -165,7 +166,7 @@
               <%}%>
             </span>
             <div class="login_panel" ng-show="player_info['<%=  total_players[index]%>'].isLoggin">
-              Position : <span class="location_data">({{player_info['<%=  total_players[index]%>'].location_x.toFixed(0)}}, {{player_info['<%=  total_players[index]%>'].location_y.toFixed(0)}} )</span>
+              Position : <span class="location_data">({{player_info['<%=  total_players[index]%>'].location_x.toFixed(0)}}, {{player_info['<%=  total_players[index]%>'].location_z.toFixed(0)}} )</span>
               PlayTime : <span class="location_data">{{player_info['<%=  total_players[index]%>'].lastLogin}}</span>
               <div class="connect_button" ng-hide="player_info['<%=  total_players[index]%>'].isConnect" ng-click="connect('<%= total_players[index]%>')">Connect</div>
               <div class="disconnect_button" ng-show="player_info['<%=  total_players[index]%>'].isConnect" ng-click="disconnect()">Disconnect</div>
@@ -174,18 +175,83 @@
         </tr>
       </table>
       <% } %>
+      <div ng-click="refresh()" class="refreshButton minefont">Refresh status</div>
     </div>
 
     <div class="subDib">
       <span class="titleHeader">웨이포인트 시스템</span>
       <a href="#crew_info">크루원 정보</a>에서 연결한 캐릭터가 웨이포인트 위에 위치해 있을 경우, 다른 웨이포인트로 순간이동 할 수 있습니다.
-      <table class="waypoint_garo" height="400px">
+      <table class="waypoint_garo" height="460px" width="100%">
         <tr>
-          <td width="400px" valign="top" ng-hide="waypoint_select != null">
+          <td width="400px" valign="top" ng-show="waypoint_select == null" class="waypoint_select">
             <img src="../Minecraft/IMG/waypoint.png" width="300px">
-            <span class="waypoint_name">way point</span>
             <span class="waypoint_description">목적지를 선택해주세요.</span>
-            <div class="waypoint_disableButton">목적지로 이동</div>
+            <div class="waypoint_disableButton minefont">use waypoint</div>
+          </td>
+          <td width="400px" valign="top" ng-show="waypoint_select != null" class="waypoint_select">
+            <img ng-src="{{waypoint_select.waypoint_url}}" width="300px">
+            <span class="waypoint_name">{{waypoint_select.waypoint_name}}</span>
+            <span class="waypoint_description">{{waypoint_select.description}}</span>
+            <table class="location_table">
+                <tr><td>X 좌표</td><td>{{waypoint_select.location[0]}}</td></tr>
+                <tr><td>Y 좌표</td><td>{{waypoint_select.location[1]}}</td></tr>
+                <tr><td>Z 좌표</td><td>{{waypoint_select.location[2]}}</td></tr>
+            </table>
+            <div class="waypoint_button minefont" ng-click="teleport()">use waypoint</div>
+          </td>
+          <td>
+            <div class="scrollDiv" width="100%">
+              <table class="waypointList" width="100%">
+                <tr data-ng-repeat="point in waypoints">
+                  <td ng-click="listClick($index)" class="waypoint_item">
+                    <span class="waypointList_name">{{point.waypoint_name}}</span>
+                    <span class="waypointList_description">{{point.description}}</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <table class="waypoint_sero" width="100%">
+        <tr>
+          <td ng-show="waypoint_select == null" class="waypoint_select">
+            <table width="100%">
+              <tr>
+                <td><img src="../Minecraft/IMG/waypoint.png" width="180px"></td>
+                <td class="sero_waypoint_select">
+                  <span class="waypoint_description">목적지를 선택해주세요.</span>
+                  <div class="waypoint_disableButton minefont">use waypoint</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td ng-show="waypoint_select != null" class="waypoint_select">
+            <table width="100%">
+              <tr>
+                <td><img ng-src="{{waypoint_select.waypoint_url}}" width="180px"></td>
+                <td class="sero_waypoint_select">
+                  <span class="waypoint_name">{{waypoint_select.waypoint_name}}</span>
+                  <span class="waypoint_description">{{waypoint_select.description}}</span>
+                  <div class="waypoint_button minefont" ng-click="teleport()">use waypoint</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+            <div class="scrollDiv" width="100%">
+              <table class="waypointList" width="100%">
+                <tr data-ng-repeat="point in waypoints">
+                  <td ng-click="listClick($index)" class="waypoint_item">
+                    <span class="waypointList_name">{{point.waypoint_name}}</span>
+                    <span class="waypointList_description">{{point.description}}</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
           </td>
         </tr>
       </table>
