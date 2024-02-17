@@ -73,20 +73,196 @@
   /* ========================================================================================================= */
   /*  기본으로 필요한 CSS 코드들                                                                                    */
   /* ========================================================================================================= */
-
+  .crewIcon {
+    width: 140px;
+    height: 140px;
+    float: left;
+  }
   
+  .crewIcon img {
+    width: 100%;
+  }
+
+  .profileDescription
+  {
+    float: left;
+    margin-left: 20px;
+  }
+
+  .profileDescription a {
+    display: block;
+    margin : 10px 0px 10px 0px;
+  }
+
+  .profileSubDescription{
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+
+  .profileName{
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  .floatClear{
+    display: block;
+    clear : both;
+  }
+  
+  hr {
+    margin-top: 20px;
+  }
+
+  .subDiv {
+    margin-top: 40px;
+    clear:both;
+    height: auto;
+  }
+
+  .LatestYoutubeSubDiv {height: 400px;}
+  .GrafanaSubDiv {height: 1200px;}
+
+  .subDivTitleSub {
+    line-height: 35px;
+    color:grey;
+    margin-top: 10px;
+  }
+  
+  .subDivTitleSpan{
+    display: block;
+    text-align: left;
+    border-left : 15px solid rgb(31, 52, 139);
+    height: 40px;
+    padding-left: 10px;
+    line-height: 40px;
+    font-size: 25px;
+    color:rgb(46, 46, 46);
+    font-weight: bold;
+  }
+
+  .subDivTitleDescriptionSpan {
+    display: block;
+    margin: 15px 0px 15px 0px;
+  }
+
+  .subDivTitleDescriptionSpan ul{
+    padding-left: 30px;
+  }
+
+  .grafanaPanel, .grafanaPanel2, .YoutubePanel, .grafanaPanelWide{
+    width: calc(50% - 15px);
+    float: left;
+    padding : 5px;
+    height: auto;
+    background-color: #f4f5f5;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+
+  .grafanaPanel2{
+    height: 250px;
+  }
+
+  .grafanaPanelWide {
+    width: calc(100% - 15px);
+    height: 150px;
+  }
+
+  .YoutubePanel {
+    margin-top: -10px;
+    height: 300px;
+  }
+
+  .YoutubePanel iframe {
+    border-radius: 10px;
+  }
+
+  .grafanaSubPanel_3 {
+    width: calc(33.33% - 20px);
+    float: left;
+    padding:10px;
+  }
+
+  .grafanaSubPanel_4 {
+    width: calc(25% - 20px);
+    float: left;
+    padding:10px;
+  }
+
+  .YoutubeTitle{
+    font-size: 1.5em;
+    font-weight: 700;
+    display: block;
+    padding: 10px 20px;
+    background-color: rgba(33, 36, 38, 0.843);
+    margin-bottom: 10px;
+    color:white;
+    border-bottom-right-radius: 30px;
+  }
+
+  .YoutubePanelDescription
+  {
+    width: calc(50% - 30px);
+    background-color: white;
+    padding-left: 20px;
+  }
+
   /* ========================================================================================================= */
   /*  모바일 버전 코드                                                                                             */
   /* ========================================================================================================= */
   @media(max-width:1200px) {
-    .mainDiv {
-      top:20px;
-      padding-top:70px;
+    .crewIcon {
+      width:  100px;
+      height: 100px;
+      float: left;
     }
-    
+
+    .profileDescription {
+      width: calc(80vw - 120px);
+    }
+
+    .LatestYoutubeSubDiv {height: 460px; overflow-y: hidden;}
+    .GrafanaSubDiv {height: 1200px;}  
+
+    .YoutubeTitle{
+      font-size: 1em;
+    }
+
+    .grafanaPanel, .grafanaPanel2, .YoutubePanel{
+      width: calc(100% - 10px);
+      float: left;
+      padding : 5px;
+      margin-right: 0px;
+    }
+
+    .grafanaPanel2{
+      height: 250px;
+    }
+
+    .YoutubePanel {
+      height: 43vw;
+    }
+
+    .grafanaPanelMobileDouble{
+      height: 330px;
+    }
+
+    .grafanaSubPanel_4 {
+      width: calc(50% - 20px);
+      float: left;
+      padding:10px;
+    }
+
+    .MobileHidden{
+      display: none;
+    }
+
     .mainDiv {
+      top:50px;
+      padding-top:70px;
       width:80vw;
-      top:15px;
       margin-bottom: 120px;
       border:none;
     }

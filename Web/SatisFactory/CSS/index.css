@@ -142,6 +142,9 @@ hr {
   height: 40px;
   padding-left: 10px;
   line-height: 40px;
+  font-size: 25px;
+  color:rgb(46, 46, 46);
+  font-weight: bold;
 }
 
 .RealBG {
@@ -174,13 +177,6 @@ hr {
 .playInfoSub {
   font-size: 12px;
 }
-
-.subDivTitle {
-  font-size: 25px;
-  color:rgb(46, 46, 46);
-  font-weight: bold;
-}
-
 
 .playInfoTable_Web {
   display: table;

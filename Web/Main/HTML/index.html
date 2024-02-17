@@ -39,22 +39,120 @@
 
         <title>머저리 게임크루 웹서버</title>
       </head>
-<body>
+    <body>
+
     <%-include('./Navi.ejs')%>
 
     <div class="mainDiv">
-        <img src="../Main/IMG/LogoLongClean2.png">
-        <div class="titleDiv">머저리 게임 크루 웹서버</div>
-        <i class="fa-solid fa-person-digging"></i>
-        <span>공사중이에요..ㅠㅜ 다음에 만나요</span>
-        <div class="GoToHome" id="GoToHome">뒤로가기</div>
-        <script language="javascript">
-          let button = document.getElementById('GoToHome')
-          button.addEventListener('click', () => {
-            window.history.back()
-          })
-        </script>
-      </div>
+        <div class="mainHeadDiv">
+            <div class="crewIcon"><img src="../Main/IMG/Logo_Sq.png"></div>
+            <div class="profileDescription">
+                <span class="profileName">머저리 게임 크루</span>
+                <a href="https://www.youtube.com/channel/UC_g7B10PocDbHjjVlhvM14Q">
+                    <img src="https://img.shields.io/badge/@_NerdGameCrew-gray?logo=youtube&style=plastic" width="140px">
+                </a>
+                <span class="profileSubDescription">머저리만 모여있는 장르 불문 게임 크루</span>
+                <span class="profileSubDescription">
+                    <img src="https://img.shields.io/badge/김영찬-3a67c9?style=plastic" width="60px">
+                    <img src="https://img.shields.io/badge/김지민-3a67c9?style=plastic" width="60px">
+                    <img src="https://img.shields.io/badge/심지석-3a67c9?style=plastic" width="60px">
+                    <img src="https://img.shields.io/badge/김주영-3a67c9?style=plastic" width="60px">
+                    <img src="https://img.shields.io/badge/조원빈-3a67c9?style=plastic" width="60px">
+                    <img src="https://img.shields.io/badge/남지훈-3a67c9?style=plastic" width="60px">
+                </span>
+            </div>
+        </div>
+        <div class="floatClear"></div>
+        <hr>
+
+        <div class="subDiv LatestYoutubeSubDiv">
+            <div class="subDivTitle">
+                <span class="subDivTitleSpan">플레이 일지</span>
+                <span class="subDivTitleDescriptionSpan">머저리 게임 크루의 가장 최신 게임 일지</span>
+            </div>
+            <div class="YoutubePanel">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/3vyIfLd2_kk?si=xTLGko73ucALHWP8&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            <div class="YoutubePanel YoutubePanelDescription">
+                <span class="YoutubeTitle">머저리게임크루 L4D2 플레이영상 02화 : CHERNOBYL</span>
+                <a href="https://www.youtube.com/hashtag/chernobyl">#Chernobyl</a>&nbsp;
+                <a href="https://www.youtube.com/hashtag/NGC">#NGC</a>&nbsp;
+                <a href="https://www.youtube.com/hashtag/%EB%A0%88%ED%8F%AC%EB%8D%B0">#레포데</a>&nbsp;
+                <a href="https://www.youtube.com/results?search_query=%23%EB%A8%B8%EC%A0%80%EB%A6%AC%EA%B2%8C%EC%9E%84%ED%81%AC%EB%A3%A8">#머저리게임크루</a>&nbsp;
+                <a href="https://www.youtube.com/hashtag/LEFT4DEAD2">#LEFT4DEAD2</a>&nbsp;
+                <Br>
+
+                머저리게임크루 L4D2 플레이영상 02화 : CHERNOBYL<br>
+                <br>
+                <b>THANKS TO : </b><br>
+                <img src="https://img.shields.io/badge/김주영-3a67c9?style=plastic" width="60px">&nbsp;
+                <img src="https://img.shields.io/badge/조원빈-3a67c9?style=plastic" width="60px">&nbsp;
+                <img src="https://img.shields.io/badge/김지민-3a67c9?style=plastic" width="60px">
+                <br><br>
+                만든 날짜 : 2020년 4월 06일
+            </div>
+        </div>
+
+        <div class="subDiv GrafanaSubDiv">
+            <div class="subDivTitle">
+                <span class="subDivTitleSpan">게임 서버 정보</span>
+                <span class="subDivTitleDescriptionSpan">현재 머저리 게임 크루는 24시간 서버를 운영하고 있으며, 서버 컴퓨터의 상세 정보는 아래와 같습니다.</span>
+            </div>
+
+            <div class="grafanaPanelWide">
+                <iframe src="http://nerdgamecrew.link:3000/d-solo/IV0hu1m7z/windows-exporter-dashbXoard?orgId=1&refresh=1s&from=now-5m&to=now&theme=light&panelId=42" width="100%" frameborder="0"></iframe>
+            </div>
+
+            <div class="grafanaPanel">
+                <div class="grafanaSubPanel_3">
+                    <iframe src="http://nerdgamecrew.link:3000/d-solo/IV0hu1m7z/windows-exporter-dashbXoard?orgId=1&refresh=1s&from=now-5m&to=now&theme=light&panelId=33" width="100%" frameborder="0"></iframe>
+                </div>
+                <div class="grafanaSubPanel_3">
+                    <iframe src="http://nerdgamecrew.link:3000/d-solo/IV0hu1m7z/windows-exporter-dashboard?orgId=1&from=now-5m&to=now&refresh=1s&theme=light&panelId=35" width="100%" frameborder="0"></iframe>
+                </div>
+                <div class="grafanaSubPanel_3">
+                    <iframe src="http://nerdgamecrew.link:3000/d-solo/IV0hu1m7z/windows-exporter-dashboard?orgId=1&from=now-5m&to=now&refresh=1s&theme=light&panelId=37" width="100%" frameborder="0"></iframe>
+                </div>
+            </div>
+           
+            
+            <div class="grafanaPanel grafanaPanelMobileDouble">
+                <div class="grafanaSubPanel_4">
+                    <iframe src="http://nerdgamecrew.link:3000/d-solo/IV0hu1m7z/windows-exporter-dashbXoard?orgId=1&refresh=1s&from=now-5m&to=now&theme=light&panelId=19" width="100%" frameborder="0"></iframe>
+                </div>
+                <div class="grafanaSubPanel_4">
+                    <iframe src="http://nerdgamecrew.link:3000/d-solo/IV0hu1m7z/windows-exporter-dashboard?orgId=1&from=now-5m&to=now&refresh=1s&theme=light&panelId=21" width="100%" frameborder="0"></iframe>
+                </div>
+                <div class="grafanaSubPanel_4">
+                    <iframe src="http://nerdgamecrew.link:3000/d-solo/IV0hu1m7z/windows-exporter-dashboard?orgId=1&from=now-5m&to=now&refresh=1s&theme=light&panelId=23" width="100%" frameborder="0"></iframe>
+                </div>
+                <div class="grafanaSubPanel_4">
+                    <iframe src="http://nerdgamecrew.link:3000/d-solo/IV0hu1m7z/windows-exporter-dashboard?orgId=1&from=now-5m&to=now&refresh=1s&theme=light&panelId=17" width="100%" frameborder="0"></iframe>
+                </div>
+            </div>
+
+            <div class="grafanaPanel2">
+                <iframe src="http://nerdgamecrew.link:3000/d-solo/IV0hu1m7z/windows-exporter-dashbXoard?orgId=1&refresh=1s&from=now-5m&to=now&theme=light&panelId=25" width="100%" height="250px" frameborder="0"></iframe>
+            </div>
+
+            <div class="grafanaPanel2">
+                <iframe src="http://nerdgamecrew.link:3000/d-solo/IV0hu1m7z/windows-exporter-dashbXoard?orgId=1&refresh=1s&from=now-5m&to=now&theme=light&panelId=14" width="100%" height="250px" frameborder="0"></iframe>
+            </div>
+
+            <div class="grafanaPanelWide">
+                <iframe src="http://nerdgamecrew.link:3000/d-solo/IV0hu1m7z/windows-exporter-dashbXoard?orgId=1&refresh=1s&from=now-5m&to=now&theme=light&panelId=11" width="100%" frameborder="0"></iframe>
+            </div>
+
+            <div class="grafanaPanel2">
+                <iframe src="http://nerdgamecrew.link:3000/d-solo/IV0hu1m7z/windows-exporter-dashbXoard?orgId=1&refresh=1s&from=now-5m&to=now&theme=light&panelId=40" width="100%" height="250px" frameborder="0"></iframe>
+            </div>
+
+            <div class="grafanaPanel2">
+                <iframe src="http://nerdgamecrew.link:3000/d-solo/IV0hu1m7z/windows-exporter-dashbXoard?orgId=1&refresh=1s&from=now-5m&to=now&theme=light&panelId=8" width="100%" height="250px" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
 
     <div class="footer">
         Presented by <a href="https://KimYC1223.github.io">KimYC1223</a>
