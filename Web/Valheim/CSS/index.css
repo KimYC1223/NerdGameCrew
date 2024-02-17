@@ -159,7 +159,25 @@ li {
   display: block;
 }
 
-.tg-0lax a {display: block; margin-bottom: 5px;}
+.tg {
+  width:60%;
+}
+
+.tg-0lax {
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
+
+.tg-0lax img{
+  display: inline-block; 
+  width: 80%;
+}
+
+.tg-0lax a {
+  display: block; margin-bottom: 5px;
+}
 
 .clearDiv, .NotClearDiv {
   display: inline-block;
@@ -267,10 +285,20 @@ li {
   .subDib {
     width: 420px;
   }
+  
+  .tg {
+    width: auto;
+    position: relative;
+    margin: 10px 0px 10px 0px;
+  }
 
   .tg img {
     width:80px;
     margin: 5px;
+  }
+
+  .tg-0lax {
+    padding-bottom: 0px;
   }
 
   .thumbnail {

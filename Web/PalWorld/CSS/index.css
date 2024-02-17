@@ -1,0 +1,172 @@
+/* ========================================================================================================= */
+/*  기본으로 필요한 CSS 코드들                                                                                    */
+/* ========================================================================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+body::-webkit-scrollbar {
+    display: none !important; /* Chrome, Safari, Opera*/
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
+
+a{text-decoration: none;}
+a:link {color:rgb(46, 100, 180);}
+a:visited {color:rgb(46, 100, 180);}
+a:hover {color:rgb(46, 100, 180);}
+a:active {color:rgb(46, 100, 180);}
+
+.draggable {
+  -webkit-user-select:text;
+  -moz-user-select:text;
+  -ms-user-select:text;
+  user-select:text
+}
+
+li {
+  -webkit-user-select:text;
+  -moz-user-select:text;
+  -ms-user-select:text;
+  user-select:text
+}
+
+.footer {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  bottom: 0;
+  text-align: center;
+  background: rgba(10, 10, 10,0.8);
+  color:white;
+}
+
+.mainDiv {
+  width:1100px;
+  display: block;
+  position: absolute;
+  padding:50px;
+  padding-top:10px;
+  top:120px;
+  left:50%;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  height: auto;
+  color:black;
+  padding-bottom: 100px;
+}
+
+/* ========================================================================================================= */
+/*  기본으로 필요한 CSS 코드들                                                                                    */
+/* ========================================================================================================= */
+
+.titleDiv {
+  width: 100%;
+  height: 300px;
+  display: block;
+  color:white;
+}
+
+.titleImageDiv {
+  width: 100%;
+  position: relative;
+  height: 300px;
+}
+
+.titleImageBackground {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  transform : translate(-50%,-50%);
+  left:50%;
+  top:50%;
+}
+
+.titleImageContent {
+  width: 100%;
+  position:absolute;
+  transform : translate(-50%,-50%);
+  left:50%;
+  top:50%;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+.titleImageLogo {
+  display: block;
+  transform: translateX(-50%);
+  margin-top: 20px;
+  left:50%;
+  position: relative;
+  width: 60%;
+  margin-bottom: 30px;
+}
+
+.MainTitle {
+  font-size: 18px;
+  background-color: rgba(0,0,0,0.8);
+  padding: 10px 20px;
+  margin-top: 20px;
+  color:white;
+}
+
+hr {
+  margin: 20px 0px;
+}
+
+.subDivTitleSub {
+  line-height: 35px;
+  color:grey;
+  margin-top: 10px;
+}
+
+.subDivTitle{
+  display: block;
+  text-align: left;
+  border-left : 15px solid rgb(31, 52, 139);
+  height: 40px;
+  padding-left: 10px;
+  line-height: 40px;
+}
+
+.RealBG {
+  width: 1100px;
+  height: calc(1100px * 0.3333);
+  background: url('../IMG/RealBG.png');
+  filter: contrast(150%);
+  background-size: cover;
+  margin-top: 20px;
+  position: relative;
+  color : white;
+}
+
+.RealBGTimeStamp {
+  display: block;
+  font-size: 18px;
+}
+
+.RealBGLocation {
+  display: block;
+  font-size: 12px;
+}
+
+.RealBGDesc {
+  position: absolute;
+  left : 15px;
+  bottom: 15px;
+}

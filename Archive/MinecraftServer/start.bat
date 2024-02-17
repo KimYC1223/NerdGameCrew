@@ -1,10 +1,10 @@
 @echo off
-title [정보킹] 마인크래프트 1.19.4 크래프트 버킷
+title [정보킹] 마인크래프트 1.20.1 크래프트 버킷
 :main
 cls
 echo ┍───────────────────────────────
 echo │
-echo │     마인크래프트 1.19.4 크래프트 버킷
+echo │     마인크래프트 1.20.1 크래프트 버킷
 echo │ 
 echo │   1. 서버 구동하기
 echo │ 
@@ -34,7 +34,7 @@ if %a%==6 goto d
 cls
 echo ┍───────────────────────────────
 echo │
-echo │     마인크래프트 1.19.4 크래프트 버킷
+echo │     마인크래프트 1.20.1 크래프트 버킷
 echo │ 
 echo │   1. 서버 구동하기 - 1GB
 echo │ 
@@ -70,7 +70,7 @@ echo │
 echo │ * 참고사항 : 서버종료는 stop입니다!!
 echo │
 echo ┕───────────────────────────────
-"c:/Program Files/Java/jdk-18.0.2.1/bin/java.exe" -Xms1G -Xmx1G -jar craftbukkit-1.19.4.jar
+"c:/Program Files/Java/jdk-18.0.2.1/bin/java.exe" -Xms1G -Xmx1G -jar craftbukkit-1.20.1.jar
 pause
 
 cls
@@ -89,7 +89,7 @@ echo │
 echo │ * 참고사항 : 서버종료는 stop입니다!!
 echo │
 echo ┕───────────────────────────────
-"c:/Program Files/Java/jdk-18.0.2.1/bin/java.exe" -Xms1G -Xmx2G -jar craftbukkit-1.19.4.jar
+"c:/Program Files/Java/jdk-18.0.2.1/bin/java.exe" -Xms1G -Xmx2G -jar craftbukkit-1.20.1.jar
 pause
 
 cls
@@ -108,7 +108,7 @@ echo │
 echo │ * 참고사항 : 서버종료는 stop입니다!!
 echo │
 echo ┕───────────────────────────────
-"c:/Program Files/Java/jdk-18.0.2.1/bin/java.exe" -Xms1G -Xmx4G -jar craftbukkit-1.19.4.jar
+"c:/Program Files/Java/jdk-18.0.2.1/bin/java.exe" -Xms1G -Xmx4G -jar craftbukkit-1.20.1.jar
 pause
 
 cls
@@ -127,7 +127,7 @@ echo │
 echo │ * 참고사항 : 서버종료는 stop입니다!!
 echo │
 echo ┕───────────────────────────────
-"c:/Program Files/Java/jdk-18.0.2.1/bin/java.exe" -Xms2G -Xmx8G -jar craftbukkit-1.19.4.jar
+"c:/Program Files/Java/jdk-18.0.2.1/bin/java.exe" -Xms2G -Xmx8G -jar craftbukkit-1.20.1.jar
 pause
 
 :ddd
@@ -142,7 +142,7 @@ echo │
 echo │ * 참고사항 : 서버종료는 stop입니다!!
 echo │
 echo ┕───────────────────────────────
-java -Xms4G -Xmx16G -jar craftbukkit-1.19.4.jar
+java -Xms4G -Xmx16G -jar craftbukkit-1.20.1.jar
 pause
 
 cls
